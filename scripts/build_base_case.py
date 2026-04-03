@@ -191,7 +191,14 @@ class RpcClient:
         if not isinstance(response, list):
             raise RuntimeError("Batch RPC response was not a list")
         ordered = sorted(response, key=lambda item: int(item["id"]))
-        return [item["result"] for item in ordered]
+        results: list[Any] = []
+        for item in ordered:
+            if "error" in item:
+                raise RuntimeError(f"RPC batch item error: {item['error']}")
+            if "result" not in item:
+                raise RuntimeError(f"RPC batch item missing result: {item}")
+            results.append(item["result"])
+        return results
 
     def _post_json(self, payload: Any) -> Any:
         body = json.dumps(payload).encode("utf-8")
@@ -215,12 +222,19 @@ class RpcClient:
                         raw = response.read().decode("utf-8")
                     parsed = json.loads(raw)
                     if isinstance(parsed, dict) and "error" in parsed:
-                        raise RuntimeError(f"RPC error: {parsed['error']}")
+                        last_error = RuntimeError(f"RPC error: {parsed['error']}")
+                        continue
+                    if isinstance(parsed, list):
+                        batch_errors = [item.get("error") for item in parsed if isinstance(item, dict) and "error" in item]
+                        if batch_errors:
+                            last_error = RuntimeError(f"RPC batch error: {batch_errors[0]}")
+                            continue
                     self.rpc_url = rpc_url
                     return parsed
                 except urllib.error.HTTPError as exc:
                     detail = exc.read().decode("utf-8", errors="replace")
-                    raise RuntimeError(f"RPC HTTP error {exc.code}: {detail}") from exc
+                    last_error = RuntimeError(f"RPC HTTP error {exc.code}: {detail}")
+                    continue
                 except (
                     urllib.error.URLError,
                     ssl.SSLError,
