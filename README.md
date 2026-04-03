@@ -147,6 +147,8 @@ Main files:
 - [benchmark_onchain_agents.ts](/home/jay/codex/genlayer/rjp/scripts/benchmark_onchain_agents.ts)
 - [benchmark_coordinated_agents.ts](/home/jay/codex/genlayer/rjp/scripts/benchmark_coordinated_agents.ts)
 - [integrations/elizaos](/home/jay/codex/genlayer/rjp/integrations/elizaos)
+- [ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md](/home/jay/codex/genlayer/rjp/ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md)
+- [ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md](/home/jay/codex/genlayer/rjp/ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md)
 
 ## What Is Verified Working
 
@@ -269,6 +271,29 @@ The current intended hackathon deployment split is:
 Browser requests should hit the Next app. The Next app should proxy to the
 Python API. Secrets stay on the API host, not in the browser.
 
+Deployment support files now in repo:
+
+- [render.yaml](/home/jay/codex/genlayer/rjp/render.yaml)
+- [.env.example](/home/jay/codex/genlayer/rjp/.env.example)
+- [requirements.txt](/home/jay/codex/genlayer/rjp/requirements.txt)
+- [DEPLOYMENT.md](/home/jay/codex/genlayer/rjp/DEPLOYMENT.md)
+
+Recommended deploy flow:
+
+1. Deploy the Python API on Render from repo root.
+2. Set Render env vars from `.env.example` with real secrets.
+3. Verify Render health at `/health`.
+4. Deploy `web/` on Vercel with:
+   - `RJP_API_BASE=https://your-render-service.onrender.com`
+5. Verify the hosted web app can:
+   - fetch health
+   - fetch current block
+   - build evidence summary
+   - build case
+   - submit and evaluate judgment
+   - publish to Base mirror
+   - read mirror judgment and handshake preview
+
 ## Canonical Docs
 
 For the fuller current-state and roadmap view:
@@ -277,6 +302,7 @@ For the fuller current-state and roadmap view:
 - [CURRENT_STATE.md](/home/jay/codex/genlayer/rjp/CURRENT_STATE.md)
 - [ARTIFACT_VERIFICATION_STATUS.md](/home/jay/codex/genlayer/rjp/ARTIFACT_VERIFICATION_STATUS.md)
 - [PROTOCOL_SAFETY_SAFE_PATH.md](/home/jay/codex/genlayer/rjp/PROTOCOL_SAFETY_SAFE_PATH.md)
+- [ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md](/home/jay/codex/genlayer/rjp/ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md)
 - [ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md](/home/jay/codex/genlayer/rjp/ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md)
 - [RJP_PROTOCOL_REBUILD_PLAN.md](/home/jay/codex/genlayer/rjp/RJP_PROTOCOL_REBUILD_PLAN.md)
 - [NEXT_STEPS.md](/home/jay/codex/genlayer/rjp/NEXT_STEPS.md)
