@@ -42,6 +42,8 @@ deployments/studionet/ReasonedJudgmentPass.protocol-safety-live-isolated-*.json
 !/PROJECT_DOCUMENTATION.md
 !/ARTIFACT_VERIFICATION_STATUS.md
 !/PROTOCOL_SAFETY_SAFE_PATH.md
+!/ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md
+!/ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md
 
 # Misc
 *.log
