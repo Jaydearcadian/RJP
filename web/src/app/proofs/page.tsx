@@ -15,6 +15,15 @@ interface ProofBundle {
   };
 }
 
+const PROOF_BUNDLE_BASE_URL =
+  process.env.NEXT_PUBLIC_PROOF_BUNDLE_BASE_URL ||
+  "https://github.com/Jaydearcadian/RJP/tree/main/proof_bundles";
+
+function proofBundleUrl(bundleId: string, suffix = ""): string {
+  const normalizedSuffix = suffix ? `/${suffix.replace(/^\/+/, "")}` : "";
+  return `${PROOF_BUNDLE_BASE_URL}/${bundleId}${normalizedSuffix}`;
+}
+
 export default function ProofsPage() {
   const [proofBundles, setProofBundles] = useState<ProofBundle[]>([]);
   const [selectedBundle, setSelectedBundle] = useState<string | null>(null);
@@ -108,11 +117,12 @@ export default function ProofsPage() {
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold">Available Proof Bundles</h2>
             <a
-              href="/proof_bundles/"
+              href={PROOF_BUNDLE_BASE_URL}
               target="_blank"
+              rel="noreferrer"
               className="text-sm text-[var(--accent)] hover:underline"
             >
-              View all in filesystem
+              View all proof bundles
             </a>
           </div>
 
@@ -137,8 +147,9 @@ export default function ProofsPage() {
                       <div className="flex gap-2">
                         <span className="badge badge-success">Verified</span>
                         <a
-                          href={`/proof_bundles/${bundle.id}/`}
+                          href={proofBundleUrl(bundle.id)}
                           target="_blank"
+                          rel="noreferrer"
                           className="px-3 py-1 text-xs bg-[var(--accent)] text-white rounded hover:opacity-80 transition-opacity"
                         >
                           Open
@@ -198,48 +209,54 @@ export default function ProofsPage() {
                           <h4 className="font-medium mb-3">Bundle Contents</h4>
                           <div className="grid md:grid-cols-2 gap-2 font-mono text-sm">
                             <a
-                              href={`/proof_bundles/${bundle.id}/manifest.json`}
+                              href={proofBundleUrl(bundle.id, "manifest.json")}
                               target="_blank"
+                              rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
                             >
                               <span>manifest.json</span>
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={`/proof_bundles/${bundle.id}/cases/clean.case.json`}
+                              href={proofBundleUrl(bundle.id, "cases/clean.case.json")}
                               target="_blank"
+                              rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
                             >
                               <span>cases/clean.case.json</span>
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={`/proof_bundles/${bundle.id}/cases/risky.case.json`}
+                              href={proofBundleUrl(bundle.id, "cases/risky.case.json")}
                               target="_blank"
+                              rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
                             >
                               <span>cases/risky.case.json</span>
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={`/proof_bundles/${bundle.id}/genlayer/clean.judgment.json`}
+                              href={proofBundleUrl(bundle.id, "genlayer/clean.judgment.json")}
                               target="_blank"
+                              rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
                             >
                               <span>genlayer/clean.judgment.json</span>
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={`/proof_bundles/${bundle.id}/genlayer/risky.judgment.json`}
+                              href={proofBundleUrl(bundle.id, "genlayer/risky.judgment.json")}
                               target="_blank"
+                              rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
                             >
                               <span>genlayer/risky.judgment.json</span>
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={`/proof_bundles/${bundle.id}/verifications/clean.verify.json`}
+                              href={proofBundleUrl(bundle.id, "verifications/clean.verify.json")}
                               target="_blank"
+                              rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
                             >
                               <span>verifications/clean.verify.json</span>
