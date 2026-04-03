@@ -45,7 +45,7 @@ The current stack is real and working:
 - benchmark harnesses for judgment-aware and non-judgment-aware agents
 - a local API adapter for building evidence, building cases, and submitting live
   judgments
-- a Next.js frontend under [`web/`](/home/jay/codex/genlayer/rjp/web)
+- a Next.js frontend under [`web/`](https://github.com/Jaydearcadian/RJP/tree/main/web)
 
 ## Current Domains
 
@@ -84,11 +84,11 @@ It records:
 
 Main files:
 
-- [build_base_case.py](/home/jay/codex/genlayer/rjp/scripts/build_base_case.py)
-- [verify_base_case.py](/home/jay/codex/genlayer/rjp/scripts/verify_base_case.py)
-- [poll_base_subject.py](/home/jay/codex/genlayer/rjp/scripts/poll_base_subject.py)
-- [poll_base_subjects.py](/home/jay/codex/genlayer/rjp/scripts/poll_base_subjects.py)
-- [confirm_case_quorum.py](/home/jay/codex/genlayer/rjp/scripts/confirm_case_quorum.py)
+- [build_base_case.py](https://github.com/Jaydearcadian/RJP/blob/main/scripts/build_base_case.py)
+- [verify_base_case.py](https://github.com/Jaydearcadian/RJP/blob/main/scripts/verify_base_case.py)
+- [poll_base_subject.py](https://github.com/Jaydearcadian/RJP/blob/main/scripts/poll_base_subject.py)
+- [poll_base_subjects.py](https://github.com/Jaydearcadian/RJP/blob/main/scripts/poll_base_subjects.py)
+- [confirm_case_quorum.py](https://github.com/Jaydearcadian/RJP/blob/main/scripts/confirm_case_quorum.py)
 
 ### 2. Protocol Layer
 
@@ -101,10 +101,10 @@ The protocol layer defines the durable object model:
 
 Main files:
 
-- [protocol/README.md](/home/jay/codex/genlayer/rjp/protocol/README.md)
-- [protocol/DOMAIN_CONSUMPTION.md](/home/jay/codex/genlayer/rjp/protocol/DOMAIN_CONSUMPTION.md)
-- [protocol/domains](/home/jay/codex/genlayer/rjp/protocol/domains)
-- [protocol/schemas](/home/jay/codex/genlayer/rjp/protocol/schemas)
+- [protocol/README.md](https://github.com/Jaydearcadian/RJP/blob/main/protocol/README.md)
+- [protocol/DOMAIN_CONSUMPTION.md](https://github.com/Jaydearcadian/RJP/blob/main/protocol/DOMAIN_CONSUMPTION.md)
+- [protocol/domains](https://github.com/Jaydearcadian/RJP/tree/main/protocol/domains)
+- [protocol/schemas](https://github.com/Jaydearcadian/RJP/tree/main/protocol/schemas)
 
 ### 3. Judgment Layer
 
@@ -113,8 +113,8 @@ judgments, and keeps revision history.
 
 Main files:
 
-- [reasoned_judgment_pass.py](/home/jay/codex/genlayer/rjp/contracts/reasoned_judgment_pass.py)
-- [LLM_EVALUATOR_DESIGN.md](/home/jay/codex/genlayer/rjp/LLM_EVALUATOR_DESIGN.md)
+- [reasoned_judgment_pass.py](https://github.com/Jaydearcadian/RJP/blob/main/contracts/reasoned_judgment_pass.py)
+- [LLM_EVALUATOR_DESIGN.md](https://github.com/Jaydearcadian/RJP/blob/main/LLM_EVALUATOR_DESIGN.md)
 
 It supports:
 
@@ -131,11 +131,11 @@ hot path.
 
 Main files:
 
-- [BaseJudgmentMirror.sol](/home/jay/codex/genlayer/rjp/evm/BaseJudgmentMirror.sol)
-- [BaseAgentActionDemo.sol](/home/jay/codex/genlayer/rjp/evm/BaseAgentActionDemo.sol)
-- [BaseAgentDirectDemo.sol](/home/jay/codex/genlayer/rjp/evm/BaseAgentDirectDemo.sol)
-- [publish_judgment_to_base.ts](/home/jay/codex/genlayer/rjp/scripts/publish_judgment_to_base.ts)
-- [preview_base_handshake.ts](/home/jay/codex/genlayer/rjp/scripts/preview_base_handshake.ts)
+- [BaseJudgmentMirror.sol](https://github.com/Jaydearcadian/RJP/blob/main/evm/BaseJudgmentMirror.sol)
+- [BaseAgentActionDemo.sol](https://github.com/Jaydearcadian/RJP/blob/main/evm/BaseAgentActionDemo.sol)
+- [BaseAgentDirectDemo.sol](https://github.com/Jaydearcadian/RJP/blob/main/evm/BaseAgentDirectDemo.sol)
+- [publish_judgment_to_base.ts](https://github.com/Jaydearcadian/RJP/blob/main/scripts/publish_judgment_to_base.ts)
+- [preview_base_handshake.ts](https://github.com/Jaydearcadian/RJP/blob/main/scripts/preview_base_handshake.ts)
 
 ### 5. Agent And Integration Layer
 
@@ -143,12 +143,12 @@ This layer proves that judgments actually change downstream behavior.
 
 Main files:
 
-- [benchmark_multi_agent_handshakes.ts](/home/jay/codex/genlayer/rjp/scripts/benchmark_multi_agent_handshakes.ts)
-- [benchmark_onchain_agents.ts](/home/jay/codex/genlayer/rjp/scripts/benchmark_onchain_agents.ts)
-- [benchmark_coordinated_agents.ts](/home/jay/codex/genlayer/rjp/scripts/benchmark_coordinated_agents.ts)
-- [integrations/elizaos](/home/jay/codex/genlayer/rjp/integrations/elizaos)
-- [ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md](/home/jay/codex/genlayer/rjp/ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md)
-- [ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md](/home/jay/codex/genlayer/rjp/ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md)
+- [benchmark_multi_agent_handshakes.ts](https://github.com/Jaydearcadian/RJP/blob/main/scripts/benchmark_multi_agent_handshakes.ts)
+- [benchmark_onchain_agents.ts](https://github.com/Jaydearcadian/RJP/blob/main/scripts/benchmark_onchain_agents.ts)
+- [benchmark_coordinated_agents.ts](https://github.com/Jaydearcadian/RJP/blob/main/scripts/benchmark_coordinated_agents.ts)
+- [integrations/elizaos](https://github.com/Jaydearcadian/RJP/tree/main/integrations/elizaos)
+- [ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md](https://github.com/Jaydearcadian/RJP/blob/main/ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md)
+- [ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md](https://github.com/Jaydearcadian/RJP/blob/main/ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md)
 
 ## What Is Verified Working
 
@@ -193,7 +193,7 @@ Current Base direct comparison agent:
 
 The local API adapter is:
 
-- [showcase_api.py](/home/jay/codex/genlayer/rjp/scripts/showcase_api.py)
+- [showcase_api.py](https://github.com/Jaydearcadian/RJP/blob/main/scripts/showcase_api.py)
 
 Its job is to make integrations and the frontend simpler. It can:
 
@@ -209,7 +209,7 @@ Its job is to make integrations and the frontend simpler. It can:
 
 The web frontend lives in:
 
-- [web/](/home/jay/codex/genlayer/rjp/web)
+- [web/](https://github.com/Jaydearcadian/RJP/tree/main/web)
 
 It is a Next.js app that talks to the Python API through Next route handlers.
 In production, the browser should use same-origin `/api` routes, while the
@@ -273,10 +273,10 @@ Python API. Secrets stay on the API host, not in the browser.
 
 Deployment support files now in repo:
 
-- [render.yaml](/home/jay/codex/genlayer/rjp/render.yaml)
-- [.env.example](/home/jay/codex/genlayer/rjp/.env.example)
-- [requirements.txt](/home/jay/codex/genlayer/rjp/requirements.txt)
-- [DEPLOYMENT.md](/home/jay/codex/genlayer/rjp/DEPLOYMENT.md)
+- [render.yaml](https://github.com/Jaydearcadian/RJP/blob/main/render.yaml)
+- [.env.example](https://github.com/Jaydearcadian/RJP/blob/main/.env.example)
+- [requirements.txt](https://github.com/Jaydearcadian/RJP/blob/main/requirements.txt)
+- [DEPLOYMENT.md](https://github.com/Jaydearcadian/RJP/blob/main/DEPLOYMENT.md)
 
 Recommended deploy flow:
 
@@ -298,12 +298,12 @@ Recommended deploy flow:
 
 For the fuller current-state and roadmap view:
 
-- [PROJECT_DOCUMENTATION.md](/home/jay/codex/genlayer/rjp/PROJECT_DOCUMENTATION.md)
-- [CURRENT_STATE.md](/home/jay/codex/genlayer/rjp/CURRENT_STATE.md)
-- [ARTIFACT_VERIFICATION_STATUS.md](/home/jay/codex/genlayer/rjp/ARTIFACT_VERIFICATION_STATUS.md)
-- [PROTOCOL_SAFETY_SAFE_PATH.md](/home/jay/codex/genlayer/rjp/PROTOCOL_SAFETY_SAFE_PATH.md)
-- [ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md](/home/jay/codex/genlayer/rjp/ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md)
-- [ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md](/home/jay/codex/genlayer/rjp/ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md)
-- [RJP_PROTOCOL_REBUILD_PLAN.md](/home/jay/codex/genlayer/rjp/RJP_PROTOCOL_REBUILD_PLAN.md)
-- [NEXT_STEPS.md](/home/jay/codex/genlayer/rjp/NEXT_STEPS.md)
-- [SECURITY_AND_PRODUCT_ROADMAP.md](/home/jay/codex/genlayer/rjp/SECURITY_AND_PRODUCT_ROADMAP.md)
+- [PROJECT_DOCUMENTATION.md](https://github.com/Jaydearcadian/RJP/blob/main/PROJECT_DOCUMENTATION.md)
+- [CURRENT_STATE.md](https://github.com/Jaydearcadian/RJP/blob/main/CURRENT_STATE.md)
+- [ARTIFACT_VERIFICATION_STATUS.md](https://github.com/Jaydearcadian/RJP/blob/main/ARTIFACT_VERIFICATION_STATUS.md)
+- [PROTOCOL_SAFETY_SAFE_PATH.md](https://github.com/Jaydearcadian/RJP/blob/main/PROTOCOL_SAFETY_SAFE_PATH.md)
+- [ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md](https://github.com/Jaydearcadian/RJP/blob/main/ONCHAIN_JUDGMENT_VS_DIRECT_BENCHMARK.md)
+- [ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md](https://github.com/Jaydearcadian/RJP/blob/main/ELIZA_EVIDENCE_VS_JUDGMENT_BENCHMARK.md)
+- [RJP_PROTOCOL_REBUILD_PLAN.md](https://github.com/Jaydearcadian/RJP/blob/main/RJP_PROTOCOL_REBUILD_PLAN.md)
+- [NEXT_STEPS.md](https://github.com/Jaydearcadian/RJP/blob/main/NEXT_STEPS.md)
+- [SECURITY_AND_PRODUCT_ROADMAP.md](https://github.com/Jaydearcadian/RJP/blob/main/SECURITY_AND_PRODUCT_ROADMAP.md)

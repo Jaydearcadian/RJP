@@ -38,6 +38,10 @@ deployments/studionet/ReasonedJudgmentPass.protocol-safety-live-isolated-*.json
 # Root-level docs and planning notes
 /*.md
 !/README.md
+!/CURRENT_STATE.md
+!/PROJECT_DOCUMENTATION.md
+!/ARTIFACT_VERIFICATION_STATUS.md
+!/PROTOCOL_SAFETY_SAFE_PATH.md
 
 # Misc
 *.log
