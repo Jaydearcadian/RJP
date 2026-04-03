@@ -1,0 +1,101 @@
+{
+  "schema_version": "rjp.domain_spec.v1",
+  "domain_id": "counterparty_trust.base_trade_v1",
+  "version": "v1",
+  "status": "draft",
+  "name": "Counterparty Trust for Base Trade Flows",
+  "summary": "Evaluate whether a wallet is an acceptable trading counterparty for Base-native trade flows over a bounded observation window.",
+  "subject_scope": {
+    "subject_type": "wallet",
+    "allowed_subject_networks": [
+      "base-sepolia",
+      "base-mainnet"
+    ]
+  },
+  "target_scope": {
+    "target_type": "wallet_contract_pair",
+    "target_network": "base-sepolia",
+    "target_contracts": [
+      "0x4200000000000000000000000000000000000006"
+    ],
+    "target_protocols": [
+      "erc20",
+      "base-trade-flow"
+    ],
+    "target_context_keys": [
+      "action_type",
+      "spender",
+      "asset_symbol"
+    ]
+  },
+  "window_policy": {
+    "mode": "rolling",
+    "default_window_blocks": 5000,
+    "max_window_blocks": 50000,
+    "freshness_window_blocks": 50000
+  },
+  "judgment_outcomes": [
+    "SAFE",
+    "CAUTION",
+    "UNSAFE",
+    "INSUFFICIENT_DATA"
+  ],
+  "evidence_policy": {
+    "policy_id": "counterparty_trade_evidence_v1",
+    "admissible_item_kinds": [
+      "transaction",
+      "transaction_receipt",
+      "log_entry",
+      "block_reference"
+    ],
+    "selection_rule": "all_outgoing_subject_transactions_plus_receipts_in_window_for_admissible_target_scope",
+    "ordering_rule": "ascending_by_block_number_then_transaction_index_then_log_index",
+    "canonicalization_rule": "lowercase_hex_addresses_and_hashes_with_json_canonical_serialization"
+  },
+  "evaluation_spec": {
+    "evaluation_spec_id": "counterparty_trade_eval_v1",
+    "claim_type": "counterparty_trade_readiness",
+    "rubric_summary": "Bounded judgment over approval breadth, failed transaction frequency, counterparty spread, and flagged interaction density for trade readiness.",
+    "required_features": [
+      "tx_count",
+      "failed_tx_count",
+      "unique_counterparties",
+      "unbounded_approval_count",
+      "flagged_interaction_count"
+    ],
+    "output_payload_fields": [
+      "tx_count",
+      "failed_tx_count",
+      "unique_counterparties",
+      "unbounded_approval_count",
+      "flagged_interaction_count",
+      "reason_summary"
+    ]
+  },
+  "model_policy": {
+    "mode": "llm",
+    "model_family": "genlayer_consensus_llm",
+    "output_schema_version": "counterparty_trade_assessment.v1",
+    "confidence_tolerance_ppm": 100000
+  },
+  "equivalence_profile": {
+    "profile_id": "counterparty_trade_equivalence_v1",
+    "outcome_match_required": true,
+    "confidence_tolerance_ppm": 100000,
+    "payload_hash_required": true
+  },
+  "revision_policy": {
+    "revision_policy_id": "counterparty_trade_revision_v1",
+    "parent_link_required": true,
+    "supersedes_prior": true,
+    "recency_basis": "source_window_end_block"
+  },
+  "policy_hashes": {
+    "domain_spec_hash": "0x35f3f3b605d54f91ad87e327787208214eda4dc1e585b10b2dc0cff253de6dea",
+    "evidence_policy_hash": "0xd0be88441e4411f1029dca72a9b3082736b09656bedc9246e07ca7d6e7a0935a",
+    "evaluation_spec_hash": "0x6196f5f0e30698d8453e1f5cafa00e4ff1fa34b897e2a1cf4d2758980acd30a4",
+    "model_policy_hash": "0x4605471b6114d47a31b7c91bd7faffd32e14bbef97be2f7119b29a93d9fc48b4",
+    "equivalence_profile_hash": "0x1a1099fb17f9af869ce2528e44c4d45a911036cabe8fcc2424ad92e900eb4299",
+    "revision_policy_hash": "0x06c644bf671bc037962ce4f0824fe47aca7951c7051a917a5183feff28837f68"
+  }
+}

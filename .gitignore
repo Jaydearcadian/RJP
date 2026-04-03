@@ -1,0 +1,45 @@
+# Secrets
+.env
+.env.*
+
+# Node / frontend
+node_modules/
+web/node_modules/
+web/.next/
+web/out/
+
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Generated writing and submission artifacts
+articles/
+qa/
+artifacts/
+
+# Generated integration output
+integrations/elizaos/dist/
+integrations/elizaos/testbed/.eliza*/
+integrations/elizaos/testbed/artifacts/
+integrations/elizaos/testbed/coverage/
+
+# Deployment snapshots and backups
+deployments/base-sepolia/backups/
+deployments/studionet/backups/
+deployments/studionet/ReasonedJudgmentPass.backup-*.json
+deployments/studionet/ReasonedJudgmentPass.*debug*.json
+deployments/studionet/ReasonedJudgmentPass.protocol-safety-live-isolated-*.json
+
+# Exported documents
+*.docx
+*.pdf
+
+# Root-level docs and planning notes
+/*.md
+!/README.md
+
+# Misc
+*.log
+tmp/
+.DS_Store

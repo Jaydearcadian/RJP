@@ -1,0 +1,23 @@
+{
+  "schema_version": "rjp.assessment_artifact.v1",
+  "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39450000-39454664",
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "domain_id": "counterparty_trust.base_trade_v1",
+  "domain_spec_hash": "0x35f3f3b605d54f91ad87e327787208214eda4dc1e585b10b2dc0cff253de6dea",
+  "parent_revision_hash": null,
+  "evidence_root": "0x3333333333333333333333333333333333333333333333333333333333333333",
+  "evaluation_spec_hash": "0x6196f5f0e30698d8453e1f5cafa00e4ff1fa34b897e2a1cf4d2758980acd30a4",
+  "model_policy_hash": "0x4605471b6114d47a31b7c91bd7faffd32e14bbef97be2f7119b29a93d9fc48b4",
+  "outcome_enum": "DENY",
+  "confidence_ppm": 940000,
+  "outcome_payload": {
+    "tx_count": 4,
+    "failed_tx_count": 0,
+    "unique_counterparties": 1,
+    "unbounded_approval_count": 1,
+    "flagged_interaction_count": 0,
+    "reason_summary": "Unbounded approval activity observed in the target trade window."
+  },
+  "outcome_payload_hash": "0x0f095a6731d9f939fbde8a3a97fe5a323f3694935fe6cc4d35a2750283be5340",
+  "evaluated_at": "2026-03-31T12:05:00Z"
+}

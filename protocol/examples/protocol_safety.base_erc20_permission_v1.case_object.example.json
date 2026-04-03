@@ -1,0 +1,69 @@
+{
+  "schema_version": "rjp.case_object.v1",
+  "case_id": "protocol_safety.base_erc20_permission_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39450000-39454664",
+  "domain_id": "protocol_safety.base_erc20_permission_v1",
+  "subject_scope": {
+    "subject_type": "wallet",
+    "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c"
+  },
+  "target_scope": {
+    "target_type": "wallet_contract_pair",
+    "target_contract": "0x4200000000000000000000000000000000000006",
+    "target_protocol": "erc20",
+    "target_context": {
+      "action_type": "approve",
+      "asset_symbol": "WETH",
+      "spender": "0x1111111111111111111111111111111111111111"
+    }
+  },
+  "observation_window": {
+    "source_network": "base-sepolia",
+    "source_chain_id": 84532,
+    "observed_from_block": 39450000,
+    "observed_to_block": 39454664,
+    "observed_from_block_hash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+    "observed_to_block_hash": "0x2222222222222222222222222222222222222222222222222222222222222222",
+    "selection_mode": "pinned_range"
+  },
+  "claim_type": "erc20_permission_safety",
+  "extractor_version": "base_erc20_permission_case.v1",
+  "evidence_root": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "evidence_manifest_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "evidence_manifest_item_count": 2,
+  "evidence_manifest": {
+    "schema_version": "rjp.base_manifest.v1",
+    "selection_rule": "all_outgoing_subject_transactions_in_window",
+    "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+    "source": {
+      "network": "base-sepolia",
+      "chain_id": 84532
+    },
+    "window": {
+      "start_block": 39450000,
+      "end_block": 39454664,
+      "start_block_hash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+      "end_block_hash": "0x2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    "item_count": 2,
+    "leaf_hashes": [
+      "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    ],
+    "merkle_root": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "items": []
+  },
+  "evidence_anchor": "base-sepolia:39450000-39454664:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "feature_summary": {
+    "tx_count": 2,
+    "failed_tx_count": 0,
+    "unique_counterparties": 1,
+    "unbounded_approval_count": 1,
+    "flagged_interaction_count": 0
+  },
+  "notes": "Window captures an unsafe unbounded approval toward the tracked spender.",
+  "created_at": "2026-04-01T13:00:00Z",
+  "source_reference": {
+    "domain_spec_hash": "0xca76e3a0393e72a94c2485f6290fc9c2f940b8abfd4ab9719aae3a0b81f20f99",
+    "evidence_policy_hash": "0x798fd545b9af478b90c837c14c7323b289f9cd8718c476b8d8ee6fd151d7081a"
+  }
+}

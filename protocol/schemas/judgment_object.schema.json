@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://rjp.local/protocol/schemas/judgment_object.schema.json",
+  "title": "JudgmentObject",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "subject_id",
+    "domain_id",
+    "case_id",
+    "assessment_hash",
+    "outcome_enum",
+    "confidence_ppm",
+    "revision",
+    "finalized_at",
+    "valid_until"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "rjp.judgment_object.v1"
+    },
+    "subject_id": {
+      "type": "string",
+      "pattern": "^0x[a-f0-9]{40}$"
+    },
+    "domain_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assessment_hash": {
+      "type": "string",
+      "pattern": "^0x[a-f0-9]{64}$"
+    },
+    "outcome_enum": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence_ppm": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "finalized_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "valid_until": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "source_network",
+        "source_chain_id",
+        "source_block"
+      ],
+      "properties": {
+        "basis": {
+          "type": "string",
+          "enum": [
+            "source_block",
+            "timestamp"
+          ]
+        },
+        "source_network": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_chain_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_block": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

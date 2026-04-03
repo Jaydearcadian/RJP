@@ -1,0 +1,24 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "BaseJudgmentMirror.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ncontract BaseJudgmentMirror {\n    address public owner;\n    mapping(address => bool) public authorizedPublishers;\n\n    struct JudgmentInput {\n        string subjectId;\n        string domainId;\n        uint64 revision;\n        string outcome;\n        uint32 confidencePpm;\n        uint32 freshnessWindowBlocks;\n        uint64 validUntilSourceBlock;\n        bytes32 assessmentHash;\n        bytes32 caseHash;\n        bytes32 evidenceAnchorHash;\n        string sourceNetwork;\n        uint64 sourceChainId;\n        string riskFlagsJson;\n        string summary;\n    }\n\n    struct JudgmentRecord {\n        string subjectId;\n        string domainId;\n        uint64 revision;\n        string outcome;\n        uint32 confidencePpm;\n        uint32 freshnessWindowBlocks;\n        uint64 validUntilSourceBlock;\n        bytes32 assessmentHash;\n        bytes32 caseHash;\n        bytes32 evidenceAnchorHash;\n        string sourceNetwork;\n        uint64 sourceChainId;\n        string riskFlagsJson;\n        string summary;\n        uint256 publishedAt;\n    }\n\n    mapping(bytes32 => JudgmentRecord) public latestBySubjectKey;\n\n    event PublisherAuthorizationUpdated(address indexed publisher, bool authorized);\n    event JudgmentPublished(\n        bytes32 indexed subjectKey,\n        string subjectId,\n        uint64 revision,\n        string outcome,\n        uint64 validUntilSourceBlock,\n        bytes32 assessmentHash\n    );\n\n    constructor(address initialPublisher) {\n        owner = msg.sender;\n        authorizedPublishers[msg.sender] = true;\n        emit PublisherAuthorizationUpdated(msg.sender, true);\n\n        if (initialPublisher != address(0) && initialPublisher != msg.sender) {\n            authorizedPublishers[initialPublisher] = true;\n            emit PublisherAuthorizationUpdated(initialPublisher, true);\n        }\n    }\n\n    modifier onlyOwner() {\n        require(msg.sender == owner, \"Only owner\");\n        _;\n    }\n\n    modifier onlyAuthorizedPublisher() {\n        require(authorizedPublishers[msg.sender], \"Unauthorized publisher\");\n        _;\n    }\n\n    function setPublisher(address publisher, bool authorized) external onlyOwner {\n        authorizedPublishers[publisher] = authorized;\n        emit PublisherAuthorizationUpdated(publisher, authorized);\n    }\n\n    function subjectKeyFor(string calldata subjectId) external pure returns (bytes32) {\n        return keccak256(bytes(subjectId));\n    }\n\n    function getLatestBySubject(\n        string calldata subjectId\n    ) external view returns (JudgmentRecord memory) {\n        return latestBySubjectKey[keccak256(bytes(subjectId))];\n    }\n\n    function publishJudgment(JudgmentInput calldata input) external onlyAuthorizedPublisher {\n        bytes32 subjectKey = keccak256(bytes(input.subjectId));\n        latestBySubjectKey[subjectKey] = JudgmentRecord({\n            subjectId: input.subjectId,\n            domainId: input.domainId,\n            revision: input.revision,\n            outcome: input.outcome,\n            confidencePpm: input.confidencePpm,\n            freshnessWindowBlocks: input.freshnessWindowBlocks,\n            validUntilSourceBlock: input.validUntilSourceBlock,\n            assessmentHash: input.assessmentHash,\n            caseHash: input.caseHash,\n            evidenceAnchorHash: input.evidenceAnchorHash,\n            sourceNetwork: input.sourceNetwork,\n            sourceChainId: input.sourceChainId,\n            riskFlagsJson: input.riskFlagsJson,\n            summary: input.summary,\n            publishedAt: block.timestamp\n        });\n\n        emit JudgmentPublished(\n            subjectKey,\n            input.subjectId,\n            input.revision,\n            input.outcome,\n            input.validUntilSourceBlock,\n            input.assessmentHash\n        );\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "viaIR": true,
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode.object",
+          "evm.deployedBytecode.object"
+        ]
+      }
+    }
+  }
+}

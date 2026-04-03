@@ -1,0 +1,24 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "BaseAgentActionDemo.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ninterface IBaseJudgmentMirror {\n    struct JudgmentRecord {\n        string subjectId;\n        string domainId;\n        uint64 revision;\n        string outcome;\n        uint32 confidencePpm;\n        uint32 freshnessWindowBlocks;\n        uint64 validUntilSourceBlock;\n        bytes32 assessmentHash;\n        bytes32 caseHash;\n        bytes32 evidenceAnchorHash;\n        string sourceNetwork;\n        uint64 sourceChainId;\n        string riskFlagsJson;\n        string summary;\n        uint256 publishedAt;\n    }\n\n    function getLatestBySubject(\n        string calldata subjectId\n    ) external view returns (JudgmentRecord memory);\n}\n\ncontract BaseAgentActionDemo {\n    struct ActionRecord {\n        address actor;\n        string subjectId;\n        string actionType;\n        bool allowed;\n        string reason;\n        string outcome;\n        uint64 revision;\n        uint64 validUntilSourceBlock;\n        uint32 freshnessWindowBlocks;\n        string summary;\n        uint256 recordedAt;\n    }\n\n    address public owner;\n    IBaseJudgmentMirror public immutable mirror;\n    uint256 public actionCount;\n    mapping(uint256 => ActionRecord) public actions;\n\n    event ActionEvaluated(\n        uint256 indexed actionId,\n        address indexed actor,\n        string subjectId,\n        string actionType,\n        bool allowed,\n        string reason,\n        string outcome,\n        uint64 revision\n    );\n\n    constructor(address mirrorAddress) {\n        require(mirrorAddress != address(0), \"Mirror required\");\n        owner = msg.sender;\n        mirror = IBaseJudgmentMirror(mirrorAddress);\n    }\n\n    function attemptAction(\n        string calldata subjectId,\n        string calldata actionType\n    ) external returns (bool allowed) {\n        IBaseJudgmentMirror.JudgmentRecord memory judgment = mirror.getLatestBySubject(subjectId);\n        string memory reason;\n        (allowed, reason) = _evaluateDecision(judgment);\n\n        uint256 actionId = actionCount + 1;\n        actionCount = actionId;\n        actions[actionId] = ActionRecord({\n            actor: msg.sender,\n            subjectId: subjectId,\n            actionType: actionType,\n            allowed: allowed,\n            reason: reason,\n            outcome: judgment.outcome,\n            revision: judgment.revision,\n            validUntilSourceBlock: judgment.validUntilSourceBlock,\n            freshnessWindowBlocks: judgment.freshnessWindowBlocks,\n            summary: judgment.summary,\n            recordedAt: block.timestamp\n        });\n\n        emit ActionEvaluated(\n            actionId,\n            msg.sender,\n            subjectId,\n            actionType,\n            allowed,\n            reason,\n            judgment.outcome,\n            judgment.revision\n        );\n    }\n\n    function getLatestAction() external view returns (ActionRecord memory) {\n        if (actionCount == 0) {\n            return\n                ActionRecord({\n                    actor: address(0),\n                    subjectId: \"\",\n                    actionType: \"\",\n                    allowed: false,\n                    reason: \"\",\n                    outcome: \"\",\n                    revision: 0,\n                    validUntilSourceBlock: 0,\n                    freshnessWindowBlocks: 0,\n                    summary: \"\",\n                    recordedAt: 0\n                });\n        }\n        return actions[actionCount];\n    }\n\n    function _evaluateDecision(\n        IBaseJudgmentMirror.JudgmentRecord memory judgment\n    ) internal view returns (bool, string memory) {\n        if (judgment.revision == 0) {\n            return (false, \"no mirrored judgment\");\n        }\n        if (judgment.sourceChainId != uint64(block.chainid)) {\n            return (false, \"source chain mismatch\");\n        }\n        if (uint256(judgment.validUntilSourceBlock) < block.number) {\n            return (false, \"judgment is stale\");\n        }\n        if (!_sameString(judgment.outcome, \"SAFE\")) {\n            return (false, string.concat(\"latest outcome is \", judgment.outcome));\n        }\n        return (true, \"fresh SAFE judgment\");\n    }\n\n    function _sameString(string memory a, string memory b) internal pure returns (bool) {\n        return keccak256(bytes(a)) == keccak256(bytes(b));\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "viaIR": true,
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode.object",
+          "evm.deployedBytecode.object"
+        ]
+      }
+    }
+  }
+}

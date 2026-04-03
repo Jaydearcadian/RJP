@@ -1,0 +1,23 @@
+{
+  "schema_version": "rjp.assessment_artifact.v1",
+  "case_id": "protocol_safety.base_erc20_permission_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39450000-39454664",
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "domain_id": "protocol_safety.base_erc20_permission_v1",
+  "domain_spec_hash": "0xca76e3a0393e72a94c2485f6290fc9c2f940b8abfd4ab9719aae3a0b81f20f99",
+  "parent_revision_hash": null,
+  "evidence_root": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "evaluation_spec_hash": "0xa7a091d2b6134a9c5e7ad6a1758ce0fcfc130cc03f2beaacb69c52f586590580",
+  "model_policy_hash": "0xf75148e39ed8c9975ccfdb82a53796f597073c03cf83aba19863c5e2e7d5d986",
+  "outcome_enum": "UNSAFE",
+  "confidence_ppm": 950000,
+  "outcome_payload": {
+    "tx_count": 2,
+    "failed_tx_count": 0,
+    "unique_counterparties": 1,
+    "unbounded_approval_count": 1,
+    "flagged_interaction_count": 0,
+    "reason_summary": "Unbounded approval to the tracked spender makes this permission posture unsafe."
+  },
+  "outcome_payload_hash": "0x70beb0a76154fc147a3a944e983dcab5a11100f0fe919347d2715429f43eeb04",
+  "evaluated_at": "2026-04-01T13:05:00Z"
+}

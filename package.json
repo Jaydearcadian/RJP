@@ -1,0 +1,52 @@
+{
+  "name": "rjp-genlayer-helpers",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "agent-use-judgment": "tsx scripts/agent_use_judgment.ts",
+    "authorize-bridge-relayer": "tsx scripts/authorize_bridge_relayer.ts",
+    "benchmark-multi-agent-handshakes": "tsx scripts/benchmark_multi_agent_handshakes.ts",
+    "benchmark-onchain-agents": "tsx scripts/benchmark_onchain_agents.ts",
+    "benchmark-coordinated-agents": "tsx scripts/benchmark_coordinated_agents.ts",
+    "deploy-base-agent-direct": "tsx scripts/deploy_base_agent_direct.ts",
+    "deploy-base-agent-demo": "tsx scripts/deploy_base_agent_demo.ts",
+    "deploy-base-mirror": "tsx scripts/deploy_base_mirror.ts",
+    "deploy-rjp-studionet": "tsx scripts/deploy_rjp_studionet.ts",
+    "evaluate-latest-evidence": "tsx scripts/evaluate_latest_evidence.ts",
+    "get-evaluation-mode": "tsx scripts/get_evaluation_mode.ts",
+    "get-handshake-state-json": "tsx scripts/get_handshake_state_json.ts",
+    "get-base-policy-model": "tsx scripts/get_base_policy_model.ts",
+    "get-latest-evidence": "tsx scripts/get_latest_evidence.ts",
+    "get-latest-evidence-json": "tsx scripts/get_latest_evidence_json.ts",
+    "get-latest-base-agent-action": "tsx scripts/get_latest_base_agent_action.ts",
+    "get-latest-judgment": "tsx scripts/get_latest_judgment.ts",
+    "get-latest-judgment-json": "tsx scripts/get_latest_judgment_json.ts",
+    "get-published-judgment-from-base": "tsx scripts/get_published_judgment_from_base.ts",
+    "preview-base-handshake": "tsx scripts/preview_base_handshake.ts",
+    "publish-judgment-to-base": "tsx scripts/publish_judgment_to_base.ts",
+    "stimulate-agent-on-base": "tsx scripts/stimulate_agent_on_base.ts",
+    "set-base-mirror-publisher": "tsx scripts/set_base_mirror_publisher.ts",
+    "set-evaluation-mode": "tsx scripts/set_evaluation_mode.ts",
+    "showcase:api": "python3 scripts/showcase_api.py",
+    "validate-protocol-artifacts": "node scripts/validate_protocol_artifacts.js",
+    "verify-base-case": "python3 scripts/verify_base_case.py",
+    "submit-base-case": "tsx scripts/submit_base_case_to_rjp.ts",
+    "set-bridge-receiver": "tsx scripts/set_bridge_receiver.ts",
+    "check-bridge-receiver": "tsx scripts/check_bridge_receiver.ts",
+    "set-default-freshness-window": "tsx scripts/set_default_freshness_window.ts",
+    "verify-base-contract-blockscout": "tsx scripts/verify_base_contract_blockscout.ts",
+    "verify-base-contract-hardhat": "tsx scripts/verify_base_contract_hardhat.ts",
+    "verify-base-contract-etherscan-v2": "tsx scripts/verify_base_contract_etherscan_v2.ts",
+    "verify-coordinated-attestation": "tsx scripts/verify_coordinated_attestation.ts",
+    "web:dev": "cd web && npm run dev",
+    "web:build": "cd web && npm run build",
+    "web:start": "cd web && npm run start"
+  },
+  "dependencies": {
+    "genlayer-js": "^0.18.4"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
+  }
+}

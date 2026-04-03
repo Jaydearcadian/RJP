@@ -1,0 +1,59 @@
+{
+  "schema_version": "rjp.base_case.v1",
+  "extractor_version": "base_execution_integrity.v1",
+  "subject_id": "0x0000000000000000000000000000000000000ca7",
+  "domain_id": "EXECUTION_INTEGRITY_V1",
+  "source": {
+    "network": "base-sepolia",
+    "chain_id": 84532,
+    "source_label": "synthetic-benchmark-caution"
+  },
+  "window": {
+    "start_block": 39460000,
+    "end_block": 39460000,
+    "start_block_hash": "0x0ca7000000000000000000000000000000000000000000000000000000000001",
+    "end_block_hash": "0x0ca7000000000000000000000000000000000000000000000000000000000001"
+  },
+  "features": {
+    "tx_count": 1,
+    "failed_tx_count": 1,
+    "unique_counterparties": 1,
+    "unbounded_approval_count": 0,
+    "high_risk_flags": 0
+  },
+  "evidence_manifest": {
+    "schema_version": "rjp.base_manifest.v1",
+    "selection_rule": "all_outgoing_subject_transactions_in_window",
+    "subject_id": "0x0000000000000000000000000000000000000ca7",
+    "source": {
+      "network": "base-sepolia",
+      "chain_id": 84532
+    },
+    "window": {
+      "start_block": 39460000,
+      "end_block": 39460000,
+      "start_block_hash": "0x0ca7000000000000000000000000000000000000000000000000000000000001",
+      "end_block_hash": "0x0ca7000000000000000000000000000000000000000000000000000000000001"
+    },
+    "item_count": 1,
+    "leaf_hashes": [
+      "0xf9fab2165953bfb399fd460b5515eaafe89a4e03c0d029d82f9c98cab9c56b24"
+    ],
+    "merkle_root": "0xf9fab2165953bfb399fd460b5515eaafe89a4e03c0d029d82f9c98cab9c56b24",
+    "items": [
+      {
+        "kind": "tx_receipt",
+        "tx_hash": "0xca71000000000000000000000000000000000000000000000000000000000001",
+        "block_number": 39460000,
+        "block_hash": "0x0ca7000000000000000000000000000000000000000000000000000000000001",
+        "transaction_index": 0,
+        "from": "0x0000000000000000000000000000000000000ca7",
+        "to": "0x000000000000000000000000000000000000cafe",
+        "input": "0x",
+        "status": 0,
+        "logs": []
+      }
+    ]
+  },
+  "notes": "Synthetic benchmark caution case with one failed transaction and no severe flags."
+}

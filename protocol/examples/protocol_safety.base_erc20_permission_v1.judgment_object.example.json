@@ -1,0 +1,17 @@
+{
+  "schema_version": "rjp.judgment_object.v1",
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "domain_id": "protocol_safety.base_erc20_permission_v1",
+  "case_id": "protocol_safety.base_erc20_permission_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39450000-39454664",
+  "assessment_hash": "0xca5b67bf7bba4b02305a55e994ebfe6b0fae110ff51bfe60397370c2d9b97705",
+  "outcome_enum": "UNSAFE",
+  "confidence_ppm": 950000,
+  "revision": 1,
+  "finalized_at": "2026-04-01T13:06:00Z",
+  "valid_until": {
+    "basis": "source_block",
+    "source_network": "base-sepolia",
+    "source_chain_id": 84532,
+    "source_block": 39504664
+  }
+}

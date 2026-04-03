@@ -1,0 +1,17 @@
+{
+  "schema_version": "rjp.judgment_object.v1",
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "domain_id": "counterparty_trust.base_trade_v1",
+  "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39450000-39454664",
+  "assessment_hash": "0x9d0b110d4b90f5afd079e54f72009d90285115debf63b08204e02f2bad0c8efe",
+  "outcome_enum": "DENY",
+  "confidence_ppm": 940000,
+  "revision": 1,
+  "finalized_at": "2026-03-31T12:06:00Z",
+  "valid_until": {
+    "basis": "source_block",
+    "source_network": "base-sepolia",
+    "source_chain_id": 84532,
+    "source_block": 39504664
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "rjp-eliza-testbed",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:judgments": "tsx src/test_judgments.ts",
+    "test:runtime-chat": "tsx src/test_runtime_chat.ts",
+    "benchmark:6-onchain": "tsx src/benchmark_six_agents_onchain.ts",
+    "benchmark:evidence-vs-judgment": "tsx src/benchmark_evidence_vs_judgment.ts"
+  },
+  "dependencies": {
+    "@elizaos/core": "^1.4.3",
+    "@elizaos/plugin-bootstrap": "^1.4.3",
+    "@elizaos/plugin-openrouter": "^1.4.3",
+    "@elizaos/plugin-sql": "^1.4.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
+  }
+}

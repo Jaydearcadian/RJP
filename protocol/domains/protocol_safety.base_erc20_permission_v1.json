@@ -1,0 +1,101 @@
+{
+  "schema_version": "rjp.domain_spec.v1",
+  "domain_id": "protocol_safety.base_erc20_permission_v1",
+  "version": "v1",
+  "status": "draft",
+  "name": "Protocol Safety for Base ERC-20 Permission Flows",
+  "summary": "Evaluate whether a wallet's ERC-20 approval posture toward a target spender and asset is safe over a bounded observation window.",
+  "subject_scope": {
+    "subject_type": "wallet",
+    "allowed_subject_networks": [
+      "base-sepolia",
+      "base-mainnet"
+    ]
+  },
+  "target_scope": {
+    "target_type": "wallet_contract_pair",
+    "target_network": "base-sepolia",
+    "target_contracts": [
+      "0x4200000000000000000000000000000000000006"
+    ],
+    "target_protocols": [
+      "erc20",
+      "erc20-permission"
+    ],
+    "target_context_keys": [
+      "action_type",
+      "spender",
+      "asset_symbol"
+    ]
+  },
+  "window_policy": {
+    "mode": "rolling",
+    "default_window_blocks": 5000,
+    "max_window_blocks": 50000,
+    "freshness_window_blocks": 50000
+  },
+  "judgment_outcomes": [
+    "SAFE",
+    "CAUTION",
+    "UNSAFE",
+    "INSUFFICIENT_DATA"
+  ],
+  "evidence_policy": {
+    "policy_id": "erc20_permission_evidence_v1",
+    "admissible_item_kinds": [
+      "transaction",
+      "transaction_receipt",
+      "log_entry",
+      "block_reference"
+    ],
+    "selection_rule": "all_outgoing_subject_transactions_plus_receipts_in_window_for_admissible_permission_scope",
+    "ordering_rule": "ascending_by_block_number_then_transaction_index_then_log_index",
+    "canonicalization_rule": "lowercase_hex_addresses_and_hashes_with_json_canonical_serialization"
+  },
+  "evaluation_spec": {
+    "evaluation_spec_id": "erc20_permission_safety_eval_v1",
+    "claim_type": "erc20_permission_safety",
+    "rubric_summary": "Bounded judgment over approval breadth, failed permission attempts, spender spread, and flagged permission interactions for ERC-20 approval safety.",
+    "required_features": [
+      "tx_count",
+      "failed_tx_count",
+      "unique_counterparties",
+      "unbounded_approval_count",
+      "flagged_interaction_count"
+    ],
+    "output_payload_fields": [
+      "tx_count",
+      "failed_tx_count",
+      "unique_counterparties",
+      "unbounded_approval_count",
+      "flagged_interaction_count",
+      "reason_summary"
+    ]
+  },
+  "model_policy": {
+    "mode": "llm",
+    "model_family": "genlayer_consensus_llm",
+    "output_schema_version": "erc20_permission_assessment.v1",
+    "confidence_tolerance_ppm": 100000
+  },
+  "equivalence_profile": {
+    "profile_id": "erc20_permission_equivalence_v1",
+    "outcome_match_required": true,
+    "confidence_tolerance_ppm": 100000,
+    "payload_hash_required": true
+  },
+  "revision_policy": {
+    "revision_policy_id": "erc20_permission_revision_v1",
+    "parent_link_required": true,
+    "supersedes_prior": true,
+    "recency_basis": "source_window_end_block"
+  },
+  "policy_hashes": {
+    "domain_spec_hash": "0xca76e3a0393e72a94c2485f6290fc9c2f940b8abfd4ab9719aae3a0b81f20f99",
+    "evidence_policy_hash": "0x798fd545b9af478b90c837c14c7323b289f9cd8718c476b8d8ee6fd151d7081a",
+    "evaluation_spec_hash": "0xa7a091d2b6134a9c5e7ad6a1758ce0fcfc130cc03f2beaacb69c52f586590580",
+    "model_policy_hash": "0xf75148e39ed8c9975ccfdb82a53796f597073c03cf83aba19863c5e2e7d5d986",
+    "equivalence_profile_hash": "0x3b9fe2d80869378d4adee7f46ca41e93b8753d59e02475f4c5edc66ba12d22e9",
+    "revision_policy_hash": "0x90f897517be54c63c53dedae86381d7dff51d46fc37e6e0e2386dd71f807e393"
+  }
+}
