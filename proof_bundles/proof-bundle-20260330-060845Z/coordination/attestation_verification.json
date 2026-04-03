@@ -1,0 +1,11 @@
+{
+  "attested_report_hash": "0xd928a97848f5ae5cc90df46a99e275ede5e910370a1a6af114b718fa5f38dc80",
+  "attested_signer": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+  "computed_report_hash": "0xd928a97848f5ae5cc90df46a99e275ede5e910370a1a6af114b718fa5f38dc80",
+  "has_signature": true,
+  "recovered_signer": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+  "report_hash_matches": true,
+  "scheme": "eip191-message",
+  "signed_at": "2026-03-30T06:10:22.731Z",
+  "signer_matches": true
+}

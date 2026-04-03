@@ -1,0 +1,44 @@
+{
+  "domain_id": "EXECUTION_INTEGRITY_V1",
+  "evidence_manifest": {
+    "item_count": 0,
+    "items": [],
+    "leaf_hashes": [],
+    "merkle_root": "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "schema_version": "rjp.base_manifest.v1",
+    "selection_rule": "all_outgoing_subject_transactions_in_window",
+    "source": {
+      "chain_id": 84532,
+      "network": "base-sepolia"
+    },
+    "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+    "window": {
+      "end_block": 39450410,
+      "end_block_hash": "0x64023eeb566b222d598589cb47485a7bef5c712764c2fd8f1b0a417065b1f9a8",
+      "start_block": 39450360,
+      "start_block_hash": "0x635a564884f9dd33b7d690628215bc479888a109259c0e5b37d1623ee78f498d"
+    }
+  },
+  "extractor_version": "base_execution_integrity.v1",
+  "features": {
+    "failed_tx_count": 0,
+    "high_risk_flags": 0,
+    "tx_count": 0,
+    "unbounded_approval_count": 0,
+    "unique_counterparties": 0
+  },
+  "notes": "Normalized base-sepolia evidence for 0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c over blocks 39450360-39450410: tx_count=0, failed_tx_count=0, unbounded_approval_count=0, high_risk_flags=0.",
+  "schema_version": "rjp.base_case.v1",
+  "source": {
+    "chain_id": 84532,
+    "network": "base-sepolia",
+    "source_label": "base-sepolia-public-rpc"
+  },
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "window": {
+    "end_block": 39450410,
+    "end_block_hash": "0x64023eeb566b222d598589cb47485a7bef5c712764c2fd8f1b0a417065b1f9a8",
+    "start_block": 39450360,
+    "start_block_hash": "0x635a564884f9dd33b7d690628215bc479888a109259c0e5b37d1623ee78f498d"
+  }
+}

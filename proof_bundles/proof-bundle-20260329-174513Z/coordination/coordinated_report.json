@@ -1,0 +1,133 @@
+{
+  "report": {
+    "config": {
+      "rounds": 1,
+      "action_type": "trade",
+      "base_mirror_address": "0xdc57b5802e11047bbe732a4a4cf4d71101b969a7",
+      "current_source_block": 39519060,
+      "subjects": [
+        "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c"
+      ]
+    },
+    "read_latency_ms": {
+      "min": 2596,
+      "max": 2596,
+      "avg": 2596,
+      "samples": [
+        2596
+      ]
+    },
+    "judgments": {
+      "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001": {
+        "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "domain_id": "EXECUTION_INTEGRITY_V1",
+        "revision": 4,
+        "outcome": "SAFE",
+        "confidence_ppm": 900000,
+        "freshness_window_blocks": 100000,
+        "valid_until_source_block": 39603002,
+        "assessment_hash": "0x00000000000000000000000000000000000000000000000000000000c01df805",
+        "case_hash": "0x000000000000000000000000000000000000000000000000000000006d324bab",
+        "evidence_anchor_hash": "0xa695026b0ebbef6e982d2c288e33e30a9253b2d80c315cf41f783b146037d440",
+        "source_network": "base-sepolia",
+        "source_chain_id": 84532,
+        "risk_flags": [],
+        "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+        "published_at": 1774775940
+      },
+      "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c": {
+        "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+        "domain_id": "EXECUTION_INTEGRITY_V1",
+        "revision": 5,
+        "outcome": "UNSAFE",
+        "confidence_ppm": 940000,
+        "freshness_window_blocks": 100000,
+        "valid_until_source_block": 39550410,
+        "assessment_hash": "0x00000000000000000000000000000000000000000000000000000000f71162c0",
+        "case_hash": "0x00000000000000000000000000000000000000000000000000000000f3b6f649",
+        "evidence_anchor_hash": "0x65e3de0bac49203cd0310b6c5dca57d9b4a95c05df4bfbfaf2e440977bbc763d",
+        "source_network": "base-sepolia",
+        "source_chain_id": 84532,
+        "risk_flags": [
+          "UNBOUNDED_APPROVAL"
+        ],
+        "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+        "published_at": 1774776484
+      }
+    },
+    "agents": [
+      {
+        "id": "counterparty_guard",
+        "description": "Requires both self and counterparty to be SAFE before interacting."
+      },
+      {
+        "id": "throughput_matcher",
+        "description": "Routes quickly to SAFE peers, queues CAUTION, refuses unsafe or stale peers."
+      },
+      {
+        "id": "reckless_peer",
+        "description": "Ignores mirrored trust state and proceeds regardless."
+      }
+    ],
+    "interactions": [
+      {
+        "actor_subject": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "counterparty_subject": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+        "actor_expected_label": "SAFE",
+        "counterparty_expected_label": "UNSAFE",
+        "action_type": "trade",
+        "actor_state": "SAFE",
+        "counterparty_state": "UNSAFE",
+        "actor_summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+        "counterparty_summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+        "agent_decisions": [
+          {
+            "id": "counterparty_guard",
+            "decision": "DENY"
+          },
+          {
+            "id": "throughput_matcher",
+            "decision": "BLOCK_COUNTERPARTY"
+          },
+          {
+            "id": "reckless_peer",
+            "decision": "TRY_ANYWAY"
+          }
+        ]
+      },
+      {
+        "actor_subject": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+        "counterparty_subject": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "actor_expected_label": "UNSAFE",
+        "counterparty_expected_label": "SAFE",
+        "action_type": "trade",
+        "actor_state": "UNSAFE",
+        "counterparty_state": "SAFE",
+        "actor_summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+        "counterparty_summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+        "agent_decisions": [
+          {
+            "id": "counterparty_guard",
+            "decision": "DENY"
+          },
+          {
+            "id": "throughput_matcher",
+            "decision": "HOLD_SELF"
+          },
+          {
+            "id": "reckless_peer",
+            "decision": "TRY_ANYWAY"
+          }
+        ]
+      }
+    ]
+  },
+  "attestation": {
+    "scheme": "eip191-message",
+    "report_hash": "0xa4f62fe453b301515a4365b402c5a7047a4cb15e73baa1c5d86ba03722fae73e",
+    "signer": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+    "signature": "0x4cddb886dbe1a26132d61b474c9ca25992bbe49362fba2f2b5fd7427773524ad0637ad1e0da898ac3b7e9af51bdd11a2b569cb8ce10deb84304cde2d313077e01c",
+    "signed_at": "2026-03-29T17:46:52.798Z"
+  }
+}

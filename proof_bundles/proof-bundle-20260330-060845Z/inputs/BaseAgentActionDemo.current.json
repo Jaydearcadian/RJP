@@ -1,0 +1,11 @@
+{
+  "contract": "BaseAgentActionDemo",
+  "network": "baseSepoliaTestnet",
+  "chainId": 84532,
+  "address": "0x44d06a11c90e088ea18576f35123ac3c5ffdd2f6",
+  "deploymentHash": "0xad4553476d5019c41480f2a38e84c975cabf00439fd25b5aabbce209559e5a9f",
+  "params": {
+    "mirrorAddress": "0xdc57b5802e11047bbe732a4a4cf4d71101b969a7"
+  },
+  "timestamp": "2026-03-29T07:50:52.991Z"
+}

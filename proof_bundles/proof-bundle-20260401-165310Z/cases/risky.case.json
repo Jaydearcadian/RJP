@@ -1,0 +1,92 @@
+{
+  "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+  "claim_type": "counterparty_trade_readiness",
+  "created_at": "2026-04-01T16:53:22Z",
+  "domain_id": "counterparty_trust.base_trade_v1",
+  "evidence_anchor": "base-sepolia:84532:39629295-39629295:0xc883b3111352d932",
+  "evidence_manifest": {
+    "item_count": 1,
+    "items": [
+      {
+        "block_hash": "0x09caefdc837f07ef724fa36576c3242fe00402cd7558ef7eba0707e5d88914e0",
+        "block_number": 39629295,
+        "from": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+        "input": "0x095ea7b30000000000000000000000001111111111111111111111111111111111111111ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "kind": "tx_receipt",
+        "logs": [
+          {
+            "address": "0x4200000000000000000000000000000000000006",
+            "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+            "topics": [
+              "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+              "0x0000000000000000000000003d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+              "0x0000000000000000000000001111111111111111111111111111111111111111"
+            ]
+          }
+        ],
+        "status": 1,
+        "to": "0x4200000000000000000000000000000000000006",
+        "transaction_index": 7,
+        "tx_hash": "0x8eeb3a408d4eb577f001119fdab67b34b402b11b3b54ad32e5b4b4fde7f12142"
+      }
+    ],
+    "leaf_hashes": [
+      "0xc883b3111352d93254472181cf7cc1365e6c9780fa8fde9448a374ad6539a920"
+    ],
+    "merkle_root": "0xc883b3111352d93254472181cf7cc1365e6c9780fa8fde9448a374ad6539a920",
+    "schema_version": "rjp.base_manifest.v1",
+    "selection_rule": "all_outgoing_subject_transactions_in_window",
+    "source": {
+      "chain_id": 84532,
+      "network": "base-sepolia"
+    },
+    "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+    "window": {
+      "end_block": 39629295,
+      "end_block_hash": "0x09caefdc837f07ef724fa36576c3242fe00402cd7558ef7eba0707e5d88914e0",
+      "start_block": 39629295,
+      "start_block_hash": "0x09caefdc837f07ef724fa36576c3242fe00402cd7558ef7eba0707e5d88914e0"
+    }
+  },
+  "evidence_manifest_hash": "0xfff86d601ac445b0dbd3fa6f33f6be535d4cc50b75e741cd27192b02693d3988",
+  "evidence_manifest_item_count": 1,
+  "evidence_root": "0xc883b3111352d93254472181cf7cc1365e6c9780fa8fde9448a374ad6539a920",
+  "extractor_version": "base_counterparty_trade_case.v1",
+  "feature_summary": {
+    "failed_tx_count": 0,
+    "flagged_interaction_count": 0,
+    "high_risk_flags": 0,
+    "tx_count": 1,
+    "unbounded_approval_count": 1,
+    "unique_counterparties": 1
+  },
+  "notes": "Normalized base-sepolia evidence for 0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c over blocks 39629295-39629295: tx_count=1, failed_tx_count=0, unbounded_approval_count=1, high_risk_flags=0.",
+  "observation_window": {
+    "observed_from_block": 39629295,
+    "observed_from_block_hash": "0x09caefdc837f07ef724fa36576c3242fe00402cd7558ef7eba0707e5d88914e0",
+    "observed_to_block": 39629295,
+    "observed_to_block_hash": "0x09caefdc837f07ef724fa36576c3242fe00402cd7558ef7eba0707e5d88914e0",
+    "selection_mode": "pinned_range",
+    "source_chain_id": 84532,
+    "source_network": "base-sepolia"
+  },
+  "schema_version": "rjp.case_object.v1",
+  "source_reference": {
+    "domain_spec_hash": "0x35f3f3b605d54f91ad87e327787208214eda4dc1e585b10b2dc0cff253de6dea",
+    "evidence_policy_hash": "0xd0be88441e4411f1029dca72a9b3082736b09656bedc9246e07ca7d6e7a0935a"
+  },
+  "subject_scope": {
+    "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+    "subject_type": "wallet"
+  },
+  "target_scope": {
+    "target_context": {
+      "action_type": "trade",
+      "asset_symbol": "WETH",
+      "spender": "0x4200000000000000000000000000000000000006"
+    },
+    "target_contract": "0x4200000000000000000000000000000000000006",
+    "target_protocol": "erc20",
+    "target_type": "wallet_contract_pair"
+  }
+}

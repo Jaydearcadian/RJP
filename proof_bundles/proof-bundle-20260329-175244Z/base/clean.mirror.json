@@ -1,0 +1,17 @@
+{
+  "assessment_hash": "0x00000000000000000000000000000000000000000000000000000000c01df805",
+  "case_hash": "0x000000000000000000000000000000000000000000000000000000006d324bab",
+  "confidence_ppm": 900000,
+  "domain_id": "EXECUTION_INTEGRITY_V1",
+  "evidence_anchor_hash": "0xa695026b0ebbef6e982d2c288e33e30a9253b2d80c315cf41f783b146037d440",
+  "freshness_window_blocks": 100000,
+  "outcome": "SAFE",
+  "published_at": 1774775940,
+  "revision": 4,
+  "risk_flags": [],
+  "source_chain_id": 84532,
+  "source_network": "base-sepolia",
+  "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+  "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+  "valid_until_source_block": 39603002
+}

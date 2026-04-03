@@ -1,0 +1,72 @@
+{
+  "assessment_hash": "0x052f2ac0bd7ea451f8d7584da6cff240b0292300fb413f683b21fd098f55e3b5",
+  "case_hash": "0xd18add2047d8216f633f213a6d6e392009ec6b269cb695028851c67da5ac0e78",
+  "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+  "case_schema_version": "rjp.case_object.v1",
+  "claim_type": "counterparty_trade_readiness",
+  "confidence_ppm": 900000,
+  "domain_id": "counterparty_trust.base_trade_v1",
+  "domain_interpretation": {
+    "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+    "claim_type": "counterparty_trade_readiness",
+    "consumer_focus": [
+      "trade readiness",
+      "counterparty behavior over the observed window",
+      "freshness before allowing execution"
+    ],
+    "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+    "domain_family": "counterparty_trust",
+    "domain_id": "counterparty_trust.base_trade_v1",
+    "domain_outcome_meaning": {
+      "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+      "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment.",
+      "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+      "UNSAFE": "Counterparty behavior in this window should block trade or require denial."
+    },
+    "hot_path_read": {
+      "allow_when": "SAFE and fresh",
+      "deny_when": "UNSAFE",
+      "primary_field": "outcome",
+      "review_when": "CAUTION or INSUFFICIENT_DATA"
+    },
+    "interpretation_kind": "counterparty trade readiness",
+    "risk_signal_interpretation": "No explicit risk flags were carried in this judgment.",
+    "subject_kind": "wallet",
+    "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+    "target_kind": "wallet_contract_pair"
+  },
+  "domain_spec_hash": "0x35f3f3b605d54f91ad87e327787208214eda4dc1e585b10b2dc0cff253de6dea",
+  "end_block": 39503002,
+  "end_block_hash": "0x0c4c0d74227673d061e889aecfeee7e0c48a218101831b928531c9e7317ceba3",
+  "evaluation_spec_hash": "0x6196f5f0e30698d8453e1f5cafa00e4ff1fa34b897e2a1cf4d2758980acd30a4",
+  "evidence_anchor": "base-sepolia:84532:39502983-39503002:0x02687d376741d37e",
+  "evidence_sequence": 1,
+  "exists": true,
+  "extractor_version": "base_counterparty_trade_case.v1",
+  "finalized_at": "1970-01-01T00:00:00Z",
+  "freshness_window_blocks": 250000,
+  "manifest_item_count": 20,
+  "manifest_root": "0x02687d376741d37e9fc3b41a91392b6653b96d66bf444939d78f73deb4549ca7",
+  "manifest_schema_version": "rjp.base_manifest.v1",
+  "model_policy_hash": "0x4605471b6114d47a31b7c91bd7faffd32e14bbef97be2f7119b29a93d9fc48b4",
+  "outcome": "SAFE",
+  "outcome_enum": "SAFE",
+  "reason_code": "SAFE_BASELINE",
+  "revision": 1,
+  "risk_flags": [],
+  "schema_version": "rjp.judgment_object.v1",
+  "source_chain_id": 84532,
+  "source_label": "unspecified-source",
+  "source_network": "base-sepolia",
+  "start_block": 39502983,
+  "start_block_hash": "0xa65d5ed9f1a24e4c4a4304f689be58811f02e6d517aacef417e1e01836a91c71",
+  "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+  "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+  "valid_until": {
+    "basis": "source_block",
+    "source_block": 39753002,
+    "source_chain_id": 84532,
+    "source_network": "base-sepolia"
+  },
+  "valid_until_source_block": 39753002
+}

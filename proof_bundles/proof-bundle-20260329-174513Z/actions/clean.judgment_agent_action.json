@@ -1,0 +1,44 @@
+{
+  "blockNumber": 39519045,
+  "event": {
+    "actionId": 6,
+    "actionType": "trade",
+    "actor": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+    "allowed": true,
+    "outcome": "SAFE",
+    "reason": "fresh SAFE judgment",
+    "reasonCode": "SAFE_FRESH",
+    "revision": 4,
+    "state": "SAFE",
+    "subjectId": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001"
+  },
+  "latestAction": {
+    "action_type": "trade",
+    "actor": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+    "allowed": true,
+    "freshness_window_blocks": 100000,
+    "outcome": "SAFE",
+    "reason": "fresh SAFE judgment",
+    "reason_code": "SAFE_FRESH",
+    "recommended_action": "ALLOW",
+    "recorded_at": 1774805498,
+    "revision": 4,
+    "state": "SAFE",
+    "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+    "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+    "valid_until_source_block": 39603002
+  },
+  "previewHandshake": {
+    "allowed": true,
+    "freshness_window_blocks": 100000,
+    "outcome": "SAFE",
+    "reason": "fresh SAFE judgment",
+    "reason_code": "SAFE_FRESH",
+    "recommended_action": "ALLOW",
+    "revision": 4,
+    "state": "SAFE",
+    "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+    "valid_until_source_block": 39603002
+  },
+  "txHash": "0x2a66a32baf08236c6fec125fbc954ca915d26309b34826dcf70f17d02ee8ca33"
+}

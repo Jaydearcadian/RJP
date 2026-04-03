@@ -1,0 +1,6 @@
+{
+  "attempt_action_is_enforced": true,
+  "preview_is_advisory": true,
+  "recommendation_is_hint": true,
+  "state_is_primary": true
+}

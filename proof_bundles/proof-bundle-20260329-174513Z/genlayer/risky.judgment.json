@@ -1,0 +1,30 @@
+{
+  "assessment_hash": "0xf71162c0",
+  "case_hash": "0xf3b6f649",
+  "case_schema_version": "rjp.base_case.v1",
+  "confidence_ppm": 940000,
+  "domain_id": "EXECUTION_INTEGRITY_V1",
+  "end_block": 39450410,
+  "end_block_hash": "0x64023eeb566b222d598589cb47485a7bef5c712764c2fd8f1b0a417065b1f9a8",
+  "evidence_anchor": "base-sepolia:84532:39450360-39450410:0x05661b12d83992b6",
+  "evidence_sequence": 4,
+  "exists": true,
+  "extractor_version": "base_execution_integrity.v1",
+  "freshness_window_blocks": 100000,
+  "manifest_item_count": 1,
+  "manifest_root": "0x05661b12d83992b6d7be8066c212aacef48ff3877de584735bef1e4fac61e5d0",
+  "manifest_schema_version": "rjp.base_manifest.v1",
+  "outcome": "UNSAFE",
+  "revision": 5,
+  "risk_flags": [
+    "UNBOUNDED_APPROVAL"
+  ],
+  "source_chain_id": 84532,
+  "source_label": "base-sepolia-public-rpc",
+  "source_network": "base-sepolia",
+  "start_block": 39450360,
+  "start_block_hash": "0x7516b924d5115b4c87c0930cf8c52035b7296bf9950049779d6c8423a3a64c8f",
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+  "valid_until_source_block": 39550410
+}

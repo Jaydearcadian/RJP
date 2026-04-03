@@ -1,0 +1,48 @@
+{
+  "assessment_hash": "0x052f2ac0bd7ea451f8d7584da6cff240b0292300fb413f683b21fd098f55e3b5",
+  "case_hash": "0xd18add2047d8216f633f213a6d6e392009ec6b269cb695028851c67da5ac0e78",
+  "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+  "claim_type": "counterparty_trade_readiness",
+  "confidence_ppm": 900000,
+  "domain_id": "counterparty_trust.base_trade_v1",
+  "domain_interpretation": {
+    "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+    "claim_type": "counterparty_trade_readiness",
+    "consumer_focus": [
+      "trade readiness",
+      "counterparty behavior over the observed window",
+      "freshness before allowing execution"
+    ],
+    "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+    "domain_family": "counterparty_trust",
+    "domain_id": "counterparty_trust.base_trade_v1",
+    "domain_outcome_meaning": {
+      "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+      "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment.",
+      "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+      "UNSAFE": "Counterparty behavior in this window should block trade or require denial."
+    },
+    "hot_path_read": {
+      "allow_when": "SAFE and fresh",
+      "deny_when": "UNSAFE",
+      "primary_field": "outcome",
+      "review_when": "CAUTION or INSUFFICIENT_DATA"
+    },
+    "interpretation_kind": "counterparty trade readiness",
+    "risk_signal_interpretation": "No explicit risk flags were carried in this judgment.",
+    "subject_kind": "wallet",
+    "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+    "target_kind": "wallet_contract_pair"
+  },
+  "evidence_anchor_hash": "0xa695026b0ebbef6e982d2c288e33e30a9253b2d80c315cf41f783b146037d440",
+  "freshness_window_blocks": 250000,
+  "outcome": "SAFE",
+  "published_at": 1775061270,
+  "revision": 1,
+  "risk_flags": [],
+  "source_chain_id": 84532,
+  "source_network": "base-sepolia",
+  "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+  "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+  "valid_until_source_block": 39753002
+}

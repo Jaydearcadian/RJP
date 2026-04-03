@@ -15,13 +15,19 @@ interface ProofBundle {
   };
 }
 
-const PROOF_BUNDLE_BASE_URL =
-  process.env.NEXT_PUBLIC_PROOF_BUNDLE_BASE_URL ||
-  "https://github.com/Jaydearcadian/RJP/tree/main/proof_bundles";
+const GITHUB_REPO_BASE =
+  process.env.NEXT_PUBLIC_GITHUB_REPO_BASE ||
+  "https://github.com/Jaydearcadian/RJP";
+const GITHUB_BRANCH = process.env.NEXT_PUBLIC_GITHUB_BRANCH || "main";
 
-function proofBundleUrl(bundleId: string, suffix = ""): string {
-  const normalizedSuffix = suffix ? `/${suffix.replace(/^\/+/, "")}` : "";
-  return `${PROOF_BUNDLE_BASE_URL}/${bundleId}${normalizedSuffix}`;
+function proofBundleTreeUrl(bundleId = ""): string {
+  const suffix = bundleId ? `/${bundleId}` : "";
+  return `${GITHUB_REPO_BASE}/tree/${GITHUB_BRANCH}/proof_bundles${suffix}`;
+}
+
+function proofBundleFileUrl(bundleId: string, filePath: string): string {
+  const normalizedPath = filePath.replace(/^\/+/, "");
+  return `${GITHUB_REPO_BASE}/blob/${GITHUB_BRANCH}/proof_bundles/${bundleId}/${normalizedPath}`;
 }
 
 export default function ProofsPage() {
@@ -117,12 +123,12 @@ export default function ProofsPage() {
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold">Available Proof Bundles</h2>
             <a
-              href={PROOF_BUNDLE_BASE_URL}
+              href={proofBundleTreeUrl()}
               target="_blank"
               rel="noreferrer"
               className="text-sm text-[var(--accent)] hover:underline"
             >
-              View all proof bundles
+              View all proof bundles on GitHub
             </a>
           </div>
 
@@ -147,12 +153,12 @@ export default function ProofsPage() {
                       <div className="flex gap-2">
                         <span className="badge badge-success">Verified</span>
                         <a
-                          href={proofBundleUrl(bundle.id)}
+                          href={proofBundleTreeUrl(bundle.id)}
                           target="_blank"
                           rel="noreferrer"
                           className="px-3 py-1 text-xs bg-[var(--accent)] text-white rounded hover:opacity-80 transition-opacity"
                         >
-                          Open
+                          Open on GitHub
                         </a>
                       </div>
                     </div>
@@ -209,7 +215,7 @@ export default function ProofsPage() {
                           <h4 className="font-medium mb-3">Bundle Contents</h4>
                           <div className="grid md:grid-cols-2 gap-2 font-mono text-sm">
                             <a
-                              href={proofBundleUrl(bundle.id, "manifest.json")}
+                              href={proofBundleFileUrl(bundle.id, "manifest.json")}
                               target="_blank"
                               rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
@@ -218,7 +224,7 @@ export default function ProofsPage() {
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={proofBundleUrl(bundle.id, "cases/clean.case.json")}
+                              href={proofBundleFileUrl(bundle.id, "cases/clean.case.json")}
                               target="_blank"
                               rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
@@ -227,7 +233,7 @@ export default function ProofsPage() {
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={proofBundleUrl(bundle.id, "cases/risky.case.json")}
+                              href={proofBundleFileUrl(bundle.id, "cases/risky.case.json")}
                               target="_blank"
                               rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
@@ -236,7 +242,7 @@ export default function ProofsPage() {
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={proofBundleUrl(bundle.id, "genlayer/clean.judgment.json")}
+                              href={proofBundleFileUrl(bundle.id, "genlayer/clean.judgment.json")}
                               target="_blank"
                               rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
@@ -245,7 +251,7 @@ export default function ProofsPage() {
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={proofBundleUrl(bundle.id, "genlayer/risky.judgment.json")}
+                              href={proofBundleFileUrl(bundle.id, "genlayer/risky.judgment.json")}
                               target="_blank"
                               rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"
@@ -254,7 +260,7 @@ export default function ProofsPage() {
                               <span className="text-green-400">View</span>
                             </a>
                             <a
-                              href={proofBundleUrl(bundle.id, "verifications/clean.verify.json")}
+                              href={proofBundleFileUrl(bundle.id, "verifications/clean.verify.json")}
                               target="_blank"
                               rel="noreferrer"
                               className="bg-[var(--background)] rounded p-3 flex items-center justify-between hover:border-[var(--accent)] border border-transparent transition-colors"

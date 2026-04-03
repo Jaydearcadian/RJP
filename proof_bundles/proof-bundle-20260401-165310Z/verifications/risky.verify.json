@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "case_schema_version": true,
+    "domain_spec_hash": true,
+    "domain_validation": true,
+    "evidence_policy_hash": true,
+    "extractor_version": true,
+    "features": true,
+    "manifest_hash": true,
+    "manifest_item_count": true,
+    "manifest_leaf_hashes": true,
+    "manifest_merkle_root": true,
+    "manifest_schema_version": true,
+    "source": true,
+    "subject_id": true,
+    "window": true
+  },
+  "ok": true,
+  "recomputed": {
+    "features": {
+      "failed_tx_count": 0,
+      "high_risk_flags": 0,
+      "tx_count": 1,
+      "unbounded_approval_count": 1,
+      "unique_counterparties": 1
+    },
+    "manifest_hash": "0xfff86d601ac445b0dbd3fa6f33f6be535d4cc50b75e741cd27192b02693d3988",
+    "manifest_item_count": 1,
+    "manifest_merkle_root": "0xc883b3111352d93254472181cf7cc1365e6c9780fa8fde9448a374ad6539a920"
+  }
+}

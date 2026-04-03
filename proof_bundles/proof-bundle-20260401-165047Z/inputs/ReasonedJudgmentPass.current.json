@@ -1,0 +1,15 @@
+{
+  "contract": "ReasonedJudgmentPass",
+  "network": "studionet",
+  "rpc_url": "https://studio.genlayer.com/api",
+  "address": "0x4a099B06141Ca3464318c28C4D2884B85d070D4f",
+  "deployment_hash": "0xaac99b304e75d82489d86cfdfa1bf77afbab0412e80d9b73f375494fa31ff084",
+  "wallet": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+  "args": {
+    "bridge_receiver": "",
+    "evaluation_mode": "llm",
+    "default_freshness_window_blocks": 250000,
+    "prompt_profile": "isolated_minimal"
+  },
+  "timestamp": "2026-04-01T16:27:12.550Z"
+}

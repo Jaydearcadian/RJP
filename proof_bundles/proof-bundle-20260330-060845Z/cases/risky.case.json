@@ -1,0 +1,69 @@
+{
+  "domain_id": "EXECUTION_INTEGRITY_V1",
+  "evidence_manifest": {
+    "item_count": 1,
+    "items": [
+      {
+        "block_hash": "0xf4637ae1000a1e3d4ebec17c3820af3f41bbca16b7a4553fd36cbb39f25d03d9",
+        "block_number": 39450379,
+        "from": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+        "input": "0x095ea7b3000000000000000000000000fb2ee5ef1ba2c5409c5894b83e8d620ff249db47ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "kind": "tx_receipt",
+        "logs": [
+          {
+            "address": "0x4200000000000000000000000000000000000006",
+            "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+            "topics": [
+              "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+              "0x0000000000000000000000003d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+              "0x000000000000000000000000fb2ee5ef1ba2c5409c5894b83e8d620ff249db47"
+            ]
+          }
+        ],
+        "status": 1,
+        "to": "0x4200000000000000000000000000000000000006",
+        "transaction_index": 21,
+        "tx_hash": "0x0d39cd79f344fc94e0581255164ea64999c8acf70724f41da3b3476301ed4397"
+      }
+    ],
+    "leaf_hashes": [
+      "0x05661b12d83992b6d7be8066c212aacef48ff3877de584735bef1e4fac61e5d0"
+    ],
+    "merkle_root": "0x05661b12d83992b6d7be8066c212aacef48ff3877de584735bef1e4fac61e5d0",
+    "schema_version": "rjp.base_manifest.v1",
+    "selection_rule": "all_outgoing_subject_transactions_in_window",
+    "source": {
+      "chain_id": 84532,
+      "network": "base-sepolia"
+    },
+    "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+    "window": {
+      "end_block": 39450410,
+      "end_block_hash": "0x1169a43fdd4bfecb028987a91add8f23cf6fdeabf1eaba6141c8a987abd9ff2d",
+      "start_block": 39450360,
+      "start_block_hash": "0x7516b924d5115b4c87c0930cf8c52035b7296bf9950049779d6c8423a3a64c8f"
+    }
+  },
+  "extractor_version": "base_execution_integrity.v1",
+  "features": {
+    "failed_tx_count": 0,
+    "high_risk_flags": 0,
+    "tx_count": 1,
+    "unbounded_approval_count": 1,
+    "unique_counterparties": 1
+  },
+  "notes": "Normalized base-sepolia evidence for 0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c over blocks 39450360-39450410: tx_count=1, failed_tx_count=0, unbounded_approval_count=1, high_risk_flags=0.",
+  "schema_version": "rjp.base_case.v1",
+  "source": {
+    "chain_id": 84532,
+    "network": "base-sepolia",
+    "source_label": "base-sepolia-public-rpc"
+  },
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "window": {
+    "end_block": 39450410,
+    "end_block_hash": "0x1169a43fdd4bfecb028987a91add8f23cf6fdeabf1eaba6141c8a987abd9ff2d",
+    "start_block": 39450360,
+    "start_block_hash": "0x7516b924d5115b4c87c0930cf8c52035b7296bf9950049779d6c8423a3a64c8f"
+  }
+}

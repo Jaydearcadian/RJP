@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "case_schema_version": true,
+    "extractor_version": true,
+    "features": true,
+    "manifest_item_count": true,
+    "manifest_leaf_hashes": true,
+    "manifest_merkle_root": true,
+    "manifest_schema_version": true,
+    "source": true,
+    "subject_id": true,
+    "window": true
+  },
+  "ok": true,
+  "recomputed": {
+    "features": {
+      "failed_tx_count": 0,
+      "high_risk_flags": 0,
+      "tx_count": 20,
+      "unbounded_approval_count": 0,
+      "unique_counterparties": 1
+    },
+    "manifest_item_count": 20,
+    "manifest_merkle_root": "0xa2cec95daafee2a39cfbd29e9737b6ef8f7c76c6869df13bdfe14e12fde1b5a5"
+  }
+}

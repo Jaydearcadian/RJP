@@ -1,0 +1,11 @@
+{
+  "contract": "BaseJudgmentMirror",
+  "network": "baseSepoliaTestnet",
+  "chainId": 84532,
+  "address": "0xdc57b5802e11047bbe732a4a4cf4d71101b969a7",
+  "deploymentHash": "0xa775e3956a13d81b51bc5477c416638a73dca4f06d595724168bb42b73174573",
+  "params": {
+    "initialPublisher": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C"
+  },
+  "timestamp": "2026-03-28T07:45:09.084Z"
+}

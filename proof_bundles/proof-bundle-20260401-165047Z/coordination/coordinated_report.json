@@ -1,0 +1,319 @@
+{
+  "report": {
+    "config": {
+      "rounds": 1,
+      "action_type": "trade",
+      "base_mirror_address": "0x34EBfd4FcC379b14Cdd602485417a5C088228606",
+      "current_source_block": 39647006,
+      "subjects": [
+        "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c"
+      ]
+    },
+    "read_latency_ms": {
+      "min": 1027,
+      "max": 1027,
+      "avg": 1027,
+      "samples": [
+        1027
+      ]
+    },
+    "judgments": {
+      "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001": {
+        "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "domain_id": "counterparty_trust.base_trade_v1",
+        "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+        "claim_type": "counterparty_trade_readiness",
+        "revision": 1,
+        "outcome": "SAFE",
+        "confidence_ppm": 900000,
+        "freshness_window_blocks": 250000,
+        "valid_until_source_block": 39753002,
+        "assessment_hash": "0x052f2ac0bd7ea451f8d7584da6cff240b0292300fb413f683b21fd098f55e3b5",
+        "case_hash": "0xd18add2047d8216f633f213a6d6e392009ec6b269cb695028851c67da5ac0e78",
+        "evidence_anchor_hash": "0xa695026b0ebbef6e982d2c288e33e30a9253b2d80c315cf41f783b146037d440",
+        "source_network": "base-sepolia",
+        "source_chain_id": 84532,
+        "risk_flags": [],
+        "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+        "published_at": 1775061270,
+        "domain_interpretation": {
+          "domain_id": "counterparty_trust.base_trade_v1",
+          "claim_type": "counterparty_trade_readiness",
+          "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+          "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+          "domain_family": "counterparty_trust",
+          "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+          "subject_kind": "wallet",
+          "target_kind": "wallet_contract_pair",
+          "interpretation_kind": "counterparty trade readiness",
+          "domain_outcome_meaning": {
+            "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+            "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+            "UNSAFE": "Counterparty behavior in this window should block trade or require denial.",
+            "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment."
+          },
+          "consumer_focus": [
+            "trade readiness",
+            "counterparty behavior over the observed window",
+            "freshness before allowing execution"
+          ],
+          "risk_signal_interpretation": "No explicit risk flags were carried in this judgment.",
+          "hot_path_read": {
+            "primary_field": "outcome",
+            "allow_when": "SAFE and fresh",
+            "review_when": "CAUTION or INSUFFICIENT_DATA",
+            "deny_when": "UNSAFE"
+          }
+        }
+      },
+      "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c": {
+        "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+        "domain_id": "counterparty_trust.base_trade_v1",
+        "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+        "claim_type": "counterparty_trade_readiness",
+        "revision": 1,
+        "outcome": "UNSAFE",
+        "confidence_ppm": 940000,
+        "freshness_window_blocks": 250000,
+        "valid_until_source_block": 39879295,
+        "assessment_hash": "0x13d52f0e4ec74bf2b66141d0378f876beb708041d28591d020cec5433b1b32e8",
+        "case_hash": "0xd17dff635929834e6d85e1007e9935ef72821af48f9d9b69f88415e3912be87a",
+        "evidence_anchor_hash": "0x7aae67b64837d8a2438fab18e0a2fb5abc76333a60b0131d8288595efffa0a41",
+        "source_network": "base-sepolia",
+        "source_chain_id": 84532,
+        "risk_flags": [
+          "UNBOUNDED_APPROVAL"
+        ],
+        "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+        "published_at": 1775061274,
+        "domain_interpretation": {
+          "domain_id": "counterparty_trust.base_trade_v1",
+          "claim_type": "counterparty_trade_readiness",
+          "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+          "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+          "domain_family": "counterparty_trust",
+          "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+          "subject_kind": "wallet",
+          "target_kind": "wallet_contract_pair",
+          "interpretation_kind": "counterparty trade readiness",
+          "domain_outcome_meaning": {
+            "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+            "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+            "UNSAFE": "Counterparty behavior in this window should block trade or require denial.",
+            "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment."
+          },
+          "consumer_focus": [
+            "trade readiness",
+            "counterparty behavior over the observed window",
+            "freshness before allowing execution"
+          ],
+          "risk_signal_interpretation": "Risk flags explain why the counterparty is unsafe or needs caution.",
+          "hot_path_read": {
+            "primary_field": "outcome",
+            "allow_when": "SAFE and fresh",
+            "review_when": "CAUTION or INSUFFICIENT_DATA",
+            "deny_when": "UNSAFE"
+          }
+        }
+      }
+    },
+    "agents": [
+      {
+        "id": "counterparty_guard",
+        "description": "Requires both self and counterparty to be SAFE before interacting."
+      },
+      {
+        "id": "throughput_matcher",
+        "description": "Routes quickly to SAFE peers, queues CAUTION, refuses unsafe or stale peers."
+      },
+      {
+        "id": "reckless_peer",
+        "description": "Ignores mirrored trust state and proceeds regardless."
+      }
+    ],
+    "interactions": [
+      {
+        "actor_subject": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "counterparty_subject": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+        "actor_expected_label": "SAFE",
+        "counterparty_expected_label": "UNSAFE",
+        "action_type": "trade",
+        "actor_domain": "counterparty_trust.base_trade_v1",
+        "counterparty_domain": "counterparty_trust.base_trade_v1",
+        "actor_claim_type": "counterparty_trade_readiness",
+        "counterparty_claim_type": "counterparty_trade_readiness",
+        "actor_state": "SAFE",
+        "counterparty_state": "UNSAFE",
+        "actor_summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+        "counterparty_summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+        "actor_domain_interpretation": {
+          "domain_id": "counterparty_trust.base_trade_v1",
+          "claim_type": "counterparty_trade_readiness",
+          "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+          "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+          "domain_family": "counterparty_trust",
+          "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+          "subject_kind": "wallet",
+          "target_kind": "wallet_contract_pair",
+          "interpretation_kind": "counterparty trade readiness",
+          "domain_outcome_meaning": {
+            "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+            "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+            "UNSAFE": "Counterparty behavior in this window should block trade or require denial.",
+            "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment."
+          },
+          "consumer_focus": [
+            "trade readiness",
+            "counterparty behavior over the observed window",
+            "freshness before allowing execution"
+          ],
+          "risk_signal_interpretation": "No explicit risk flags were carried in this judgment.",
+          "hot_path_read": {
+            "primary_field": "outcome",
+            "allow_when": "SAFE and fresh",
+            "review_when": "CAUTION or INSUFFICIENT_DATA",
+            "deny_when": "UNSAFE"
+          }
+        },
+        "counterparty_domain_interpretation": {
+          "domain_id": "counterparty_trust.base_trade_v1",
+          "claim_type": "counterparty_trade_readiness",
+          "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+          "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+          "domain_family": "counterparty_trust",
+          "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+          "subject_kind": "wallet",
+          "target_kind": "wallet_contract_pair",
+          "interpretation_kind": "counterparty trade readiness",
+          "domain_outcome_meaning": {
+            "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+            "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+            "UNSAFE": "Counterparty behavior in this window should block trade or require denial.",
+            "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment."
+          },
+          "consumer_focus": [
+            "trade readiness",
+            "counterparty behavior over the observed window",
+            "freshness before allowing execution"
+          ],
+          "risk_signal_interpretation": "Risk flags explain why the counterparty is unsafe or needs caution.",
+          "hot_path_read": {
+            "primary_field": "outcome",
+            "allow_when": "SAFE and fresh",
+            "review_when": "CAUTION or INSUFFICIENT_DATA",
+            "deny_when": "UNSAFE"
+          }
+        },
+        "agent_decisions": [
+          {
+            "id": "counterparty_guard",
+            "decision": "DENY"
+          },
+          {
+            "id": "throughput_matcher",
+            "decision": "BLOCK_COUNTERPARTY"
+          },
+          {
+            "id": "reckless_peer",
+            "decision": "TRY_ANYWAY"
+          }
+        ]
+      },
+      {
+        "actor_subject": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+        "counterparty_subject": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "actor_expected_label": "UNSAFE",
+        "counterparty_expected_label": "SAFE",
+        "action_type": "trade",
+        "actor_domain": "counterparty_trust.base_trade_v1",
+        "counterparty_domain": "counterparty_trust.base_trade_v1",
+        "actor_claim_type": "counterparty_trade_readiness",
+        "counterparty_claim_type": "counterparty_trade_readiness",
+        "actor_state": "UNSAFE",
+        "counterparty_state": "SAFE",
+        "actor_summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+        "counterparty_summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+        "actor_domain_interpretation": {
+          "domain_id": "counterparty_trust.base_trade_v1",
+          "claim_type": "counterparty_trade_readiness",
+          "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+          "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+          "domain_family": "counterparty_trust",
+          "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+          "subject_kind": "wallet",
+          "target_kind": "wallet_contract_pair",
+          "interpretation_kind": "counterparty trade readiness",
+          "domain_outcome_meaning": {
+            "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+            "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+            "UNSAFE": "Counterparty behavior in this window should block trade or require denial.",
+            "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment."
+          },
+          "consumer_focus": [
+            "trade readiness",
+            "counterparty behavior over the observed window",
+            "freshness before allowing execution"
+          ],
+          "risk_signal_interpretation": "Risk flags explain why the counterparty is unsafe or needs caution.",
+          "hot_path_read": {
+            "primary_field": "outcome",
+            "allow_when": "SAFE and fresh",
+            "review_when": "CAUTION or INSUFFICIENT_DATA",
+            "deny_when": "UNSAFE"
+          }
+        },
+        "counterparty_domain_interpretation": {
+          "domain_id": "counterparty_trust.base_trade_v1",
+          "claim_type": "counterparty_trade_readiness",
+          "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+          "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+          "domain_family": "counterparty_trust",
+          "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+          "subject_kind": "wallet",
+          "target_kind": "wallet_contract_pair",
+          "interpretation_kind": "counterparty trade readiness",
+          "domain_outcome_meaning": {
+            "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+            "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+            "UNSAFE": "Counterparty behavior in this window should block trade or require denial.",
+            "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment."
+          },
+          "consumer_focus": [
+            "trade readiness",
+            "counterparty behavior over the observed window",
+            "freshness before allowing execution"
+          ],
+          "risk_signal_interpretation": "No explicit risk flags were carried in this judgment.",
+          "hot_path_read": {
+            "primary_field": "outcome",
+            "allow_when": "SAFE and fresh",
+            "review_when": "CAUTION or INSUFFICIENT_DATA",
+            "deny_when": "UNSAFE"
+          }
+        },
+        "agent_decisions": [
+          {
+            "id": "counterparty_guard",
+            "decision": "DENY"
+          },
+          {
+            "id": "throughput_matcher",
+            "decision": "HOLD_SELF"
+          },
+          {
+            "id": "reckless_peer",
+            "decision": "TRY_ANYWAY"
+          }
+        ]
+      }
+    ]
+  },
+  "attestation": {
+    "scheme": "eip191-message",
+    "report_hash": "0x6502e18e8c349844b5a3fb53ba24dc83dda58a6dfb5dc49ee8fd37ab772d8ba0",
+    "signer": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+    "signature": "0x947ce68e4a5c44f8dd3c45a2dab64ab2b6dff8699d45f1a60c0e270998770fc714e1bf76555dfa7d5897ba65629c05a7c5fa90855261c52d91ec7ad7788cd8d21c",
+    "signed_at": "2026-04-01T16:51:44.514Z"
+  }
+}

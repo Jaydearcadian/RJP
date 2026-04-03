@@ -1,0 +1,50 @@
+{
+  "assessment_hash": "0x13d52f0e4ec74bf2b66141d0378f876beb708041d28591d020cec5433b1b32e8",
+  "case_hash": "0xd17dff635929834e6d85e1007e9935ef72821af48f9d9b69f88415e3912be87a",
+  "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+  "claim_type": "counterparty_trade_readiness",
+  "confidence_ppm": 940000,
+  "domain_id": "counterparty_trust.base_trade_v1",
+  "domain_interpretation": {
+    "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+    "claim_type": "counterparty_trade_readiness",
+    "consumer_focus": [
+      "trade readiness",
+      "counterparty behavior over the observed window",
+      "freshness before allowing execution"
+    ],
+    "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+    "domain_family": "counterparty_trust",
+    "domain_id": "counterparty_trust.base_trade_v1",
+    "domain_outcome_meaning": {
+      "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+      "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment.",
+      "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+      "UNSAFE": "Counterparty behavior in this window should block trade or require denial."
+    },
+    "hot_path_read": {
+      "allow_when": "SAFE and fresh",
+      "deny_when": "UNSAFE",
+      "primary_field": "outcome",
+      "review_when": "CAUTION or INSUFFICIENT_DATA"
+    },
+    "interpretation_kind": "counterparty trade readiness",
+    "risk_signal_interpretation": "Risk flags explain why the counterparty is unsafe or needs caution.",
+    "subject_kind": "wallet",
+    "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+    "target_kind": "wallet_contract_pair"
+  },
+  "evidence_anchor_hash": "0x7aae67b64837d8a2438fab18e0a2fb5abc76333a60b0131d8288595efffa0a41",
+  "freshness_window_blocks": 250000,
+  "outcome": "UNSAFE",
+  "published_at": 1775061274,
+  "revision": 1,
+  "risk_flags": [
+    "UNBOUNDED_APPROVAL"
+  ],
+  "source_chain_id": 84532,
+  "source_network": "base-sepolia",
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+  "valid_until_source_block": 39879295
+}

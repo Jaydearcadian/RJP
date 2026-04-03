@@ -1,0 +1,51 @@
+{
+  "claims": {
+    "base_mirrored_consumption": true,
+    "genlayer_revisioned_judgments": true,
+    "judgment_aware_vs_direct_agent_comparison": true,
+    "reproducible_evidence": true,
+    "signed_offchain_coordination": true
+  },
+  "contracts": {
+    "base_agent_demo": "0x60381D4088B7B2C985B248CE8B64287c13b71434",
+    "base_agent_direct": "0x90db5f049c98f3fd510d866cb3386e50287b8ade",
+    "base_mirror": "0x34EBfd4FcC379b14Cdd602485417a5C088228606",
+    "rjp": "0x4a099B06141Ca3464318c28C4D2884B85d070D4f"
+  },
+  "files": {
+    "attestation_verification": "coordination/attestation_verification.json",
+    "comparison": "comparisons/judgment_vs_direct.json",
+    "coordinated_report": "coordination/coordinated_report.json",
+    "policy_model": "base/policy_model.json"
+  },
+  "generated_at": "2026-04-01T16:50:47.948297+00:00",
+  "networks": {
+    "base_rpc": "https://sepolia.base.org",
+    "genlayer_rpc": "https://studio.genlayer.com/api"
+  },
+  "root": "/home/jay/codex/genlayer/rjp/proof_bundles/proof-bundle-20260401-165047Z",
+  "subjects": {
+    "clean": {
+      "case_file": "cases/clean.case.json",
+      "judgment_file": "genlayer/clean.judgment.json",
+      "mirror_file": "base/clean.mirror.json",
+      "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+      "verify_file": "verifications/clean.verify.json",
+      "window": {
+        "end_block": 39503002,
+        "start_block": 39502983
+      }
+    },
+    "risky": {
+      "case_file": "cases/risky.case.json",
+      "judgment_file": "genlayer/risky.judgment.json",
+      "mirror_file": "base/risky.mirror.json",
+      "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+      "verify_file": "verifications/risky.verify.json",
+      "window": {
+        "end_block": 39450410,
+        "start_block": 39450360
+      }
+    }
+  }
+}

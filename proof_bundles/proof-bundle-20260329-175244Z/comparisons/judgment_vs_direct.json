@@ -1,0 +1,142 @@
+{
+  "config": {
+    "action_type": "trade",
+    "direct_demo_address": "0x90db5f049c98f3fd510d866cb3386e50287b8ade",
+    "judgment_demo_address": "0x44d06a11c90e088ea18576f35123ac3c5ffdd2f6",
+    "rounds": 1,
+    "subject_ids": [
+      "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+      "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c"
+    ]
+  },
+  "results": [
+    {
+      "direct_agent": {
+        "preview": {
+          "allowed": true,
+          "reason": "no judgment check applied",
+          "reason_code": "NO_JUDGMENT_CHECK",
+          "recommended_action": "ALLOW",
+          "state": "NO_JUDGMENT"
+        },
+        "read_latency_ms": {
+          "avg": 243,
+          "max": 243,
+          "min": 243,
+          "samples": [
+            243
+          ]
+        },
+        "tx_hashes": [
+          "0x51094c06063b5d3f31d1eaee2cf1a8aadf92b1e7b6a3fc2fcb627e12f49ae4e7"
+        ],
+        "write_latency_ms": {
+          "avg": 2526,
+          "max": 2526,
+          "min": 2526,
+          "samples": [
+            2526
+          ]
+        }
+      },
+      "judgment_agent": {
+        "preview": {
+          "allowed": true,
+          "freshness_window_blocks": 100000,
+          "outcome": "SAFE",
+          "reason": "fresh SAFE judgment",
+          "reason_code": "SAFE_FRESH",
+          "recommended_action": "ALLOW",
+          "revision": 4,
+          "state": "SAFE",
+          "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+          "valid_until_source_block": 39603002
+        },
+        "read_latency_ms": {
+          "avg": 926,
+          "max": 926,
+          "min": 926,
+          "samples": [
+            926
+          ]
+        },
+        "tx_hashes": [
+          "0xc7b2012fcf0f324572df317add9946f72f9be653549611d70d39d470b3d58da1"
+        ],
+        "write_latency_ms": {
+          "avg": 1732,
+          "max": 1732,
+          "min": 1732,
+          "samples": [
+            1732
+          ]
+        }
+      },
+      "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001"
+    },
+    {
+      "direct_agent": {
+        "preview": {
+          "allowed": true,
+          "reason": "no judgment check applied",
+          "reason_code": "NO_JUDGMENT_CHECK",
+          "recommended_action": "ALLOW",
+          "state": "NO_JUDGMENT"
+        },
+        "read_latency_ms": {
+          "avg": 253,
+          "max": 253,
+          "min": 253,
+          "samples": [
+            253
+          ]
+        },
+        "tx_hashes": [
+          "0x68194213a858de35c09ee8e3f0cdad0695c6a411f7d227410b7fa2a9a7014a42"
+        ],
+        "write_latency_ms": {
+          "avg": 1510,
+          "max": 1510,
+          "min": 1510,
+          "samples": [
+            1510
+          ]
+        }
+      },
+      "judgment_agent": {
+        "preview": {
+          "allowed": false,
+          "freshness_window_blocks": 100000,
+          "outcome": "UNSAFE",
+          "reason": "latest outcome is UNSAFE",
+          "reason_code": "OUTCOME_UNSAFE",
+          "recommended_action": "DENY",
+          "revision": 5,
+          "state": "UNSAFE",
+          "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+          "valid_until_source_block": 39550410
+        },
+        "read_latency_ms": {
+          "avg": 306,
+          "max": 306,
+          "min": 306,
+          "samples": [
+            306
+          ]
+        },
+        "tx_hashes": [
+          "0x510e3cb303e8a10b5edcf3f4e1b250e63b4c864e034c8534112910fc670978e4"
+        ],
+        "write_latency_ms": {
+          "avg": 1507,
+          "max": 1507,
+          "min": 1507,
+          "samples": [
+            1507
+          ]
+        }
+      },
+      "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c"
+    }
+  ]
+}

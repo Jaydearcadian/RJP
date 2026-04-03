@@ -1,0 +1,216 @@
+{
+  "config": {
+    "action_type": "trade",
+    "direct_demo_address": "0x90db5f049c98f3fd510d866cb3386e50287b8ade",
+    "judgment_demo_address": "0x60381D4088B7B2C985B248CE8B64287c13b71434",
+    "rounds": 1,
+    "subject_ids": [
+      "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+      "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c"
+    ]
+  },
+  "results": [
+    {
+      "direct_agent": {
+        "preview": {
+          "allowed": true,
+          "reason": "no judgment check applied",
+          "reason_code": "NO_JUDGMENT_CHECK",
+          "recommended_action": "ALLOW",
+          "state": "NO_JUDGMENT"
+        },
+        "read_latency_ms": {
+          "avg": 321,
+          "max": 321,
+          "min": 321,
+          "samples": [
+            321
+          ]
+        },
+        "tx_hashes": [
+          "0x5fab63c2861d13692bbcd5fa9a1748d0e3b1ea9a9c83dede60c40f1052850d53"
+        ],
+        "write_latency_ms": {
+          "avg": 1341,
+          "max": 1341,
+          "min": 1341,
+          "samples": [
+            1341
+          ]
+        }
+      },
+      "judgment_agent": {
+        "preview": {
+          "allowed": true,
+          "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+          "claim_type": "counterparty_trade_readiness",
+          "domain_interpretation": {
+            "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+            "claim_type": "counterparty_trade_readiness",
+            "consumer_focus": [
+              "trade readiness",
+              "counterparty behavior over the observed window",
+              "freshness before allowing execution"
+            ],
+            "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+            "domain_family": "counterparty_trust",
+            "domain_id": "counterparty_trust.base_trade_v1",
+            "domain_outcome_meaning": {
+              "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+              "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment.",
+              "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+              "UNSAFE": "Counterparty behavior in this window should block trade or require denial."
+            },
+            "handshake_state_meaning": {
+              "consumer_rule": "Treat the underlying domain judgment as allow-grade if fresh.",
+              "reason_code": "SAFE_FRESH",
+              "recommended_action": "ALLOW",
+              "state": "SAFE"
+            },
+            "hot_path_read": {
+              "allow_when": "SAFE and fresh",
+              "deny_when": "UNSAFE",
+              "primary_field": "outcome",
+              "review_when": "CAUTION or INSUFFICIENT_DATA"
+            },
+            "interpretation_kind": "counterparty trade readiness",
+            "risk_signal_interpretation": "No explicit risk flags were carried in this judgment.",
+            "subject_kind": "wallet",
+            "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+            "target_kind": "wallet_contract_pair"
+          },
+          "freshness_window_blocks": 250000,
+          "outcome": "SAFE",
+          "reason": "fresh SAFE judgment",
+          "reason_code": "SAFE_FRESH",
+          "recommended_action": "ALLOW",
+          "revision": 1,
+          "state": "SAFE",
+          "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+          "valid_until_source_block": 39753002
+        },
+        "read_latency_ms": {
+          "avg": 992,
+          "max": 992,
+          "min": 992,
+          "samples": [
+            992
+          ]
+        },
+        "tx_hashes": [
+          "0xc0798a2cc00fc08543e8438183e74f300392c6eeff32a6c8605ae5a072b3d9d8"
+        ],
+        "write_latency_ms": {
+          "avg": 1652,
+          "max": 1652,
+          "min": 1652,
+          "samples": [
+            1652
+          ]
+        }
+      },
+      "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001"
+    },
+    {
+      "direct_agent": {
+        "preview": {
+          "allowed": true,
+          "reason": "no judgment check applied",
+          "reason_code": "NO_JUDGMENT_CHECK",
+          "recommended_action": "ALLOW",
+          "state": "NO_JUDGMENT"
+        },
+        "read_latency_ms": {
+          "avg": 301,
+          "max": 301,
+          "min": 301,
+          "samples": [
+            301
+          ]
+        },
+        "tx_hashes": [
+          "0x3e81aeb4228f687a8ac8ea9235f21d5424e39988613a3e126559a4e6655432ca"
+        ],
+        "write_latency_ms": {
+          "avg": 1602,
+          "max": 1602,
+          "min": 1602,
+          "samples": [
+            1602
+          ]
+        }
+      },
+      "judgment_agent": {
+        "preview": {
+          "allowed": false,
+          "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+          "claim_type": "counterparty_trade_readiness",
+          "domain_interpretation": {
+            "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+            "claim_type": "counterparty_trade_readiness",
+            "consumer_focus": [
+              "trade readiness",
+              "counterparty behavior over the observed window",
+              "freshness before allowing execution"
+            ],
+            "consumer_question": "Should this wallet be trusted as a trading counterparty in this window?",
+            "domain_family": "counterparty_trust",
+            "domain_id": "counterparty_trust.base_trade_v1",
+            "domain_outcome_meaning": {
+              "CAUTION": "Counterparty behavior is mixed and should be reviewed before trade.",
+              "INSUFFICIENT_DATA": "There is not enough admissible evidence to form a reliable trade judgment.",
+              "SAFE": "Counterparty behavior in this window is acceptable for trade flows.",
+              "UNSAFE": "Counterparty behavior in this window should block trade or require denial."
+            },
+            "handshake_state_meaning": {
+              "consumer_rule": "Treat the underlying domain judgment as deny-grade.",
+              "reason_code": "OUTCOME_UNSAFE",
+              "recommended_action": "DENY",
+              "state": "UNSAFE"
+            },
+            "hot_path_read": {
+              "allow_when": "SAFE and fresh",
+              "deny_when": "UNSAFE",
+              "primary_field": "outcome",
+              "review_when": "CAUTION or INSUFFICIENT_DATA"
+            },
+            "interpretation_kind": "counterparty trade readiness",
+            "risk_signal_interpretation": "No explicit risk flags were carried in this judgment.",
+            "subject_kind": "wallet",
+            "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+            "target_kind": "wallet_contract_pair"
+          },
+          "freshness_window_blocks": 250000,
+          "outcome": "UNSAFE",
+          "reason": "latest outcome is UNSAFE",
+          "reason_code": "OUTCOME_UNSAFE",
+          "recommended_action": "DENY",
+          "revision": 1,
+          "state": "UNSAFE",
+          "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+          "valid_until_source_block": 39879295
+        },
+        "read_latency_ms": {
+          "avg": 268,
+          "max": 268,
+          "min": 268,
+          "samples": [
+            268
+          ]
+        },
+        "tx_hashes": [
+          "0x295095f0d9a8f1e2b212aca90e410db2ae930dea77c02ebbe31b18024986e385"
+        ],
+        "write_latency_ms": {
+          "avg": 1403,
+          "max": 1403,
+          "min": 1403,
+          "samples": [
+            1403
+          ]
+        }
+      },
+      "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c"
+    }
+  ]
+}

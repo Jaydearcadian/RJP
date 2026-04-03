@@ -1,0 +1,49 @@
+{
+  "blockNumber": 39647067,
+  "event": {
+    "actionId": 10,
+    "actionType": "trade",
+    "actor": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+    "allowed": false,
+    "outcome": "UNSAFE",
+    "reason": "latest outcome is UNSAFE",
+    "reasonCode": "OUTCOME_UNSAFE",
+    "revision": 1,
+    "state": "UNSAFE",
+    "subjectId": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c"
+  },
+  "latestGlobalAction": {
+    "action_type": "trade",
+    "actor": "0x3D1539c26aabCe1B1aCa28Fb9D8fD70670391D5C",
+    "allowed": true,
+    "case_id": "counterparty_trust.base_trade_v1:0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001:39502983-39503002",
+    "claim_type": "counterparty_trade_readiness",
+    "freshness_window_blocks": 250000,
+    "outcome": "SAFE",
+    "reason": "fresh SAFE judgment",
+    "reason_code": "SAFE_FRESH",
+    "recommended_action": "ALLOW",
+    "recorded_at": 1775062416,
+    "revision": 1,
+    "state": "SAFE",
+    "subject_id": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+    "summary": "Low-risk activity: 20 successful txs, no failures, unbounded approvals, or high-risk flags.",
+    "valid_until_source_block": 39753002
+  },
+  "latestGlobalActionNote": "getLatestAction() is the contract-wide last recorded action, not a subject-filtered lookup.",
+  "previewHandshake": {
+    "allowed": false,
+    "case_id": "counterparty_trust.base_trade_v1:0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c:39629295-39629295",
+    "claim_type": "counterparty_trade_readiness",
+    "freshness_window_blocks": 250000,
+    "outcome": "UNSAFE",
+    "reason": "latest outcome is UNSAFE",
+    "reason_code": "OUTCOME_UNSAFE",
+    "recommended_action": "DENY",
+    "revision": 1,
+    "state": "UNSAFE",
+    "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+    "valid_until_source_block": 39879295
+  },
+  "txHash": "0x48f90591ac0af44a57403b79e492a370b10f99d35b3452f0b0226e2fdf7d2afd"
+}

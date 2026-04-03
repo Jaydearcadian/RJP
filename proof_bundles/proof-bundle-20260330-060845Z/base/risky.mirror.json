@@ -1,0 +1,19 @@
+{
+  "assessment_hash": "0x00000000000000000000000000000000000000000000000000000000f71162c0",
+  "case_hash": "0x00000000000000000000000000000000000000000000000000000000f3b6f649",
+  "confidence_ppm": 940000,
+  "domain_id": "EXECUTION_INTEGRITY_V1",
+  "evidence_anchor_hash": "0x65e3de0bac49203cd0310b6c5dca57d9b4a95c05df4bfbfaf2e440977bbc763d",
+  "freshness_window_blocks": 100000,
+  "outcome": "UNSAFE",
+  "published_at": 1774776484,
+  "revision": 5,
+  "risk_flags": [
+    "UNBOUNDED_APPROVAL"
+  ],
+  "source_chain_id": 84532,
+  "source_network": "base-sepolia",
+  "subject_id": "0x3d1539c26aabce1b1aca28fb9d8fd70670391d5c",
+  "summary": "Unbounded ERC-20 approvals detected: 1 approval transaction(s).",
+  "valid_until_source_block": 39550410
+}
